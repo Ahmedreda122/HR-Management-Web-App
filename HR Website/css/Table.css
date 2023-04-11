@@ -1,0 +1,87 @@
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
+section {
+	border: none;
+	box-shadow: none;
+	padding: 0;
+}
+.table {
+	padding: 20px;
+	margin: auto;
+	margin-top: 20px;
+}
+.table tbody tr td {
+	margin-left: 10px;
+	padding: 23px;
+	text-align: center;
+	outline: 1px solid azure;
+	color: #00042a;
+}
+.table tbody tr:nth-child(odd) {
+	background-color: #1e90ffc9;
+	/* background-color: #1e90fff5; */
+}
+
+.table tbody tr:nth-child(even) {
+	background-color: #1e8fff4e;
+}
+
+.table thead tr th {
+	color: var(--main-color);
+}
+
+.table tbody tr td button {
+	padding: 10px 20px;
+	font-size: 15px;
+	font-weight: 500;
+	background-color: var(--white-color);
+	color: var(--main-color);
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	box-sizing: border-box;
+	width: 100px;
+	text-overflow: ellipsis;
+}
+
+.table tbody tr td div {
+	display: inline-block;
+	margin: 7px;
+}
+
+.span {
+	display: block;
+	letter-spacing: 1px;
+}
+
+.caption {
+	margin-bottom: 12px;
+	font-size: xx-large;
+	font-weight: bold;
+	color: #010c80;
+}
+
+.send {
+	font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+	width: 100px;
+	font-size: 16px;
+}
+
+.search {
+	color: #010c80;
+	font-weight: normal;
+	font-size: 20px;
+}
+.srchfield {
+	width: 20%;
+}
+.srchfield::placeholder {
+	font-size: 15px;
+}
+
+hr {
+	margin-top: 12px;
+}

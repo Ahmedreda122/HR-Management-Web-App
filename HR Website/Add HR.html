@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/Navbar.css" />
+    <link rel="stylesheet" href="css/Add-Modify.css" />
+    <title>Add Employee</title>
+  </head>
+  <body>
+    <section class="Conatiner">
+      <nav>
+        <ul class="links">
+          <li>
+            <div class="logo">
+              <a href="M Home.html" title="HR-System">
+                <img src="images/hr-logo-zip-file (1)/png/logo-no-background.png" />
+              </a>
+            </div>
+          </li>
+          <li><a href=" M Home.html">Home</a></li>
+          <li><a href="Add HR.html">Add an HR</a></li>
+          <li class="test"><a href="Show HR.html">List/Search HRs</a></li>
+          <li><a href="Update-Delete HR.html">Edit an HR</a></li>
+          <li><a href="Vacation Action.html">Vacations Action</a></li>
+          <li><a href="Home.html">Sign Out</a></li>
+        </ul>
+      </nav>
+    <form method="post" class="Add">
+      <div>
+        <label> User Name:</label>
+        <input
+          type="text"
+          required
+          name="E_User_Name"
+          placeholder=" Write the User Name"
+        />
+      </div>
+      <!-- <hr /> -->
+      
+      <!-- <hr /> -->
+      <div>
+        <label> User ID: </label>
+        <input
+          type="text"
+          required
+          name="ID"
+          placeholder=" Write the User ID"
+        />
+      </div>
+      <!-- <hr /> -->
+      <div>
+        <label> Email: </label>
+        <input
+          type="text"
+          required
+          name="Email"
+          placeholder=" Write the Email"
+        />
+      </div>
+      <!-- <hr /> -->
+      <div>
+        <label> Address: </label>
+        <input
+          type="text"
+          required
+          name="Address"
+          placeholder=" Write the Address"
+        />
+      </div>
+      <!-- <hr /> -->
+      <div>
+        <label> Phone Number: </label>
+        <input
+          type="tel"
+          required
+          name="Phone_Number"
+          placeholder=" Write the Phone Number"
+        />
+      </div>
+      <!-- <hr /> -->
+      <div>
+        <label> Marital Status: </label>
+        <input
+          type="number"
+          required
+          name="Marital_Status"
+          placeholder=" Write the Marital Status"
+        />
+      </div>
+      <!-- <hr /> -->
+      <div>
+        <label> Date of Birth: </label>
+        <input class = "Date" type="date" required name="Birth_Date" value="2000-01-01" />
+      </div>
+      <!-- <hr /> -->
+      <div>
+        <label> Salary: </label>
+        <input
+          type="number"
+          required
+          name="Salary"
+          placeholder=" Write the Salary"
+        />
+      </div>
+      <!-- <hr /> -->
+      <div>
+        <label> Number of Vacation: </label>
+        <input
+          type="number"
+          required
+          name="Vacation_Days"
+          placeholder=" Write the Vacation Days"
+        />
+      </div>
+      <!-- <hr /> -->
+      <div>
+        <label> Number of Approved Vacation Days: </label>
+        <input
+          type="number"
+          required
+          name="Approved_Vacation_Days"
+          placeholder=" Write the Approved Vacation Days"
+        />
+      </div>
+      <div>
+        <label> Gender: </label>
+        <select name="gender"   class = "Gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <!-- <hr /> -->
+        <input class="send" type="submit" value="Add" />
+    </form>
+  </body>
+</html>
