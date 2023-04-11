@@ -3,9 +3,12 @@ if (window.localStorage.getItem("ID") === null) {
 	// Create the intial value of ID
 	window.localStorage.setItem("ID", 20230000);
 }
-
-let ID = window.localStorage.getItem("ID");
-document.getElementById("ID").setAttribute("value", ++ID);
+// Get The current stored value of the ID in the local storage
+let nextID = window.localStorage.getItem("ID");
+// Increment the value of Current ID by 1 to be the Next ID
+++nextID;
+// Display the Next ID In the input field
+document.getElementById("ID").setAttribute("value", nextID);
 
 function isValidEmail(email) {
 	// A Form of E-mail following IETF standards
@@ -51,6 +54,9 @@ document.forms[0].onsubmit = function (event) {
 		alert("Max Vacations Days Are 10 Days per Month, Please try again");
 	}
 
-	// After Submitting successfully????
-	// window.localStorage.setItem("ID", ++ID);
+	/* If the Form was Submitted Successfully 
+	Update the value of the Current Stored ID with the Next ID in the Local Storage */
+	if (!event.defaultPrevented) {
+		window.localStorage.setItem("ID", nextID);
+	}
 };

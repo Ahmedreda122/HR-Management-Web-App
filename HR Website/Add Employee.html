@@ -79,11 +79,18 @@
           required
           name="PhoneNumber"
           placeholder=" Write the Phone Number"
-        />
-      </div>
-      <!-- <hr /> -->
-      <div>
-        <label> Marital Status: </label>
+          />
+        </div>
+        <!-- <hr /> -->
+        <div>
+          <label> Gender: </label>
+          <select name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div>
+          <label> Marital Status: </label>
         <select name="MaritalStatus">
           <option value="Single">Single</option>
           <option value="Married">Married</option>
@@ -96,6 +103,15 @@
         <input class ="Date" type="date" required name="Birth_Date" value="2000-01-01" />
       </div>
       <!-- <hr /> -->
+      <div>
+        <label> Job Title: </label>
+        <input name="Job Title"
+        type="text"
+        required
+        name="Job Title"
+        placeholder=" Write the Job Title">
+        </input>
+      </div>
       <div>
         <label> Salary: </label>
         <input
@@ -116,13 +132,6 @@
         />
       </div>
       <!-- <hr /> -->
-      <div>
-        <label> Gender: </label>
-        <select name="gender">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </div>
       <!-- HIDDEN -->
       <div style= "display: none;">
         <input type="number" name="ApprovedVacationDays" value ="0" />
