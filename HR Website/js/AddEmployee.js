@@ -1,3 +1,12 @@
+// IF ID not Exists
+if (window.localStorage.getItem("ID") === null) {
+	// Create the intial value of ID
+	window.localStorage.setItem("ID", 20230000);
+}
+
+let ID = window.localStorage.getItem("ID");
+document.getElementById("ID").setAttribute("value", ++ID);
+
 function isValidEmail(email) {
 	// A Form of E-mail following IETF standards
 	let regex =
@@ -9,7 +18,7 @@ function isValidEmail(email) {
 function isValidPhNum(phoneNum) {
 	// Standard form of Egyptain phone number
 	//  The ^ and $ characters indicate the beginning and end of the string
-	let stdPhoneNum = /^(\+)?(010|011|012|015)\d{8}$/;
+	let stdPhoneNum = /^(\+[2])?(010|011|012|015)\d{8}$/;
 	// If the user's phone number following the regex form return true, false otherwise
 	return stdPhoneNum.test(phoneNum);
 }
@@ -41,4 +50,7 @@ document.forms[0].onsubmit = function (event) {
 		event.preventDefault();
 		alert("Max Vacations Days Are 10 Days per Month, Please try again");
 	}
+
+	// After Submitting successfully????
+	// window.localStorage.setItem("ID", ++ID);
 };
