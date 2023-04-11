@@ -51,4 +51,9 @@ document.forms[0].onsubmit = function (event) {
 		alert("The password is not valid, Please try again");
 		event.preventDefault();
 	}
+
+	if (passValid && usrValid) {
+		event.preventDefault();
+		window.location.replace("../HR Website/H Home.html");
+	}
 };

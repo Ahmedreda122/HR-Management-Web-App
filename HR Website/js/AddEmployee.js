@@ -17,6 +17,9 @@ function isValidPhNum(phoneNum) {
 document.forms[0].onsubmit = function (event) {
 	let email = document.querySelector("[name=Email]");
 	let phoneNum = document.querySelector("[name=PhoneNumber]");
+	let BrthDate = new Date(document.querySelector(".Date").value);
+	let nVacc = document.querySelector("[name=VacationDays]");
+	const MAX_VACATIONS_NUM = 10;
 	let EmlValid = isValidEmail(email.value);
 	let phoneValid = isValidPhNum(phoneNum.value);
 
@@ -26,5 +29,16 @@ document.forms[0].onsubmit = function (event) {
 	} else if (!phoneValid) {
 		event.preventDefault();
 		alert("The Phone Number is not valid, Please try again");
+	}
+
+	// His Age higher than 18 Years
+	if (BrthDate.getFullYear() > 2005) {
+		event.preventDefault();
+		alert("Birth Date is not Allowed (Age > 18), Please try again");
+	}
+
+	if (nVacc.value > MAX_VACATIONS_NUM) {
+		event.preventDefault();
+		alert("Max Vacations Days Are 10 Days per Month, Please try again");
 	}
 };
