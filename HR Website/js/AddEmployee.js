@@ -55,7 +55,7 @@ document.forms[0].onsubmit = function (event) {
 	}
 
 	/* If the Form was Submitted Successfully 
-	Update the value of the Current Stored ID with the Next ID in the Local Storage */
+	Update the value of the Current Stored ID in the Local Storage with the Next ID */
 	if (!event.defaultPrevented) {
 		window.localStorage.setItem("ID", nextID);
 	}

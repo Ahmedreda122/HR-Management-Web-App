@@ -5,15 +5,15 @@ section {
 
 .send {
 	width: 100px;
-	margin: 50px auto;
+	margin: 20px 0px 35px 0px;
 	text-align: center;
 }
 .Father {
-	margin-top: 50px;
+	margin-top: 10px;
 }
 
 .Father form {
-	padding: 20px;
+	padding: 20px 20px 0px 25px;
 	box-shadow: 3px 3px 3px var(--shadow-color);
 	border-radius: var(--raduis-size);
 	width: max-content;
@@ -32,4 +32,8 @@ section {
 
 .Date {
 	transition: 0s;
+}
+
+label {
+	font-size: medium;
 }

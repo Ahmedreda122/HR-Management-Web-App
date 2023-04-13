@@ -20,3 +20,8 @@ div h1 {
 	font-size: 60px;
 	font-family: sans-serif;
 }
+
+.links {
+	justify-content: space-around;
+	gap: 84%;
+}
