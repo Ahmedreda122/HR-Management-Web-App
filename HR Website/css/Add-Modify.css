@@ -43,13 +43,17 @@
 .Date,
 select {
   padding: 10px;
-  width: 270px;
+  width: 300px;
   border: 2px solid rgb(232, 229, 229);
   border-radius: 12.5px;
   box-shadow: 2px 2px 2px var(--shadow-color);
   transition: 1s;
   font-size: 16px;
   outline: none;
+  -webkit-border-radius: 12.5px;
+  -moz-border-radius: 12.5px;
+  -ms-border-radius: 12.5px;
+  -o-border-radius: 12.5px;
 }
 
 .Add .send {

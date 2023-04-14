@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/public.css" />
   <link rel="stylesheet" href="css/Navbar.css" />
   <link rel="stylesheet" href="css/Table.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-gfdkzlimBH60Gz6XK5j41D096RDcdxvzI+Y6X9CSvZmkaZHpOWvJ+2m2kG5KMUQ2" crossorigin="anonymous">
   </head>
   <body>
     <div class="header">
@@ -41,7 +42,8 @@
     <form method="post">
       <label class="search">Search Employees: </label>
       <input class="srchfield" type="search" name="Search" placeholder="Search by Name" />
-      <input class="send" type="submit" value="Search" />
+      <svg style="fill: #0080ff;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+      <!-- <input class="send" type="submit" value="Search" /> -->
       <hr>
     </form>
       <table class="table">
@@ -61,43 +63,43 @@
         </thead>
         <tbody>
           <tr>
-            <td>20210000</td>
+            <td>20230000</td>
             <td>Abdallah</td>
             <td>Software Developer</td>
             <td>6</td>
             <td>
               <div><button>Edit</button></div>
-              <div><button onclick="return confirm ('Are you sure to remove this employee?')">Remove</button></div>
+              <div><button class = "remove">Remove</button></div>
             </td>
           </tr>
           <tr>
-            <td>20210001</td>
+            <td>20230001</td>
             <td>Ahmed</td>
             <td>IT Support Specialist</td>
             <td>6</td>
             <td>
               <div><button>Edit</button></div>
-              <div><button onclick="return confirm ('Are you sure to remove this employee?')">Remove</button></div>
+              <div><button class = "remove">Remove</button></div>
             </td>
           </tr>
           <tr>
-            <td>20210002</td>
+            <td>20230002</td>
             <td>Hadeer</td>
             <td>Marketing Manager</td>
             <td>6</td>
             <td>
               <div><button>Edit</button></div>
-              <div><button onclick="return confirm ('Are you sure to remove this employee?')">Remove</button></div>
+              <div><button class = "remove">Remove</button></div>
             </td>
           </tr>
           <tr>
-            <td>20210003</td>
+            <td>20230003</td>
             <td>Shrouk</td>
             <td>Full-stack Developer</td>
             <td>6</td>
             <td>
               <div><button>Edit</button></div>
-              <div><button onclick="return confirm ('Are you sure to remove this employee?')">Remove</button></div>
+              <div><button class = "remove">Remove</button></div>
             </td>
           </tr>
         </tbody>
