@@ -50,7 +50,9 @@ section {
 	display: inline-block;
 	margin: 7px;
 }
-
+.notFoundRow{
+	display:none;
+}
 .span {
 	display: block;
 	letter-spacing: 1px;
@@ -74,6 +76,8 @@ section {
 	color: #010c80;
 	font-weight: normal;
 	font-size: 20px;
+	display: inline-block;
+	margin-top: 30px;
 }
 .srchfield {
 	width: 20%;

@@ -23,14 +23,13 @@
 	margin-top: 20px;
 }
 .Add div label {
-	/* margin: auto; */
+	margin-bottom: 5px;
 	max-width: 250px;
 	font-size: 15px;
 	word-wrap: break-word;
 	text-align: left;
 	display: block;
-	
-	
+
 }
 .Add div input
 {
@@ -47,7 +46,7 @@
 .Date,
 select {
 	padding: 10px;
-	width: 270px;
+	width: 300px;
 	border: 2px solid rgb(232, 229, 229);
 	border-radius: 12.5px;
 	box-shadow: 2px 2px 2px var(--shadow-color);
