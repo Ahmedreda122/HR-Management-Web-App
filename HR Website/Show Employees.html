@@ -1,103 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>List/Search Employees</title>
-  <link rel="stylesheet" href="css/public.css" />
-  <link rel="stylesheet" href="css/Navbar.css" />
-  <link rel="stylesheet" href="css/Table.css" />
-  </head>
-  <body>
-    <div class="header">
-      <div class="containerNav">
-        <a href="H Home.html" title="HR-System">
-          <img class="logo" src="images/hr-logo-zip-file (1)/png/logo-no-background.png" />
-          </a>
-        
-          <div class="links">
-        <span class="icons">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-        <ul>
-          <li>
-          </li>
-          <li><a href="H Home.html">Home</a></li>
-          <li><a href="Add Employee.html">Add an Employee</a></li>
-          <li class="test"><a href="Show Employees.html">List/Search Employees</a></li>
-          <li><a href="Update-Delete Employee.html">Edit an Employee</a></li>
-          <li><a href="Show Vactions.html">Vacations Request</a></li>
-          <li><a href="Submit Vacation.html">Submit a Vacation</a></li>
-          <li><a href="Home.html">Sign Out</a></li>
-        </ul>
-       </div>
-      </div>
-  </div>
-
-  <section class="Conatiner">
-    <form method="post">
-      <label class="search">Search Employees: </label>
-      <input class="srchfield" type="search" name="Search" placeholder="Search by Name" />
-      <input class="send" type="submit" value="Search" />
-      <hr>
-    </form>
-      <table class="table">
-        <caption class="caption">
-          Employees List
-        </caption>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Employee Name</th>
-            <th>Job Title</th>
-            <th>Available Vacation<span class="span">(Days/Month)</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>20210000</td>
-            <td>Abdallah</td>
-            <td>Software Developer</td>
-            <td>6</td>
-            <td>
-              <div><button>Edit</button></div>
-              <div><button onclick="return confirm ('Are you sure to remove this employee?')">Remove</button></div>
-            </td>
-          </tr>
-          <tr>
-            <td>20210001</td>
-            <td>Ahmed</td>
-            <td>IT Support Specialist</td>
-            <td>6</td>
-            <td>
-              <div><button>Edit</button></div>
-              <div><button onclick="return confirm ('Are you sure to remove this employee?')">Remove</button></div>
-            </td>
-          </tr>
-          <tr>
-            <td>20210002</td>
-            <td>Hadeer</td>
-            <td>Marketing Manager</td>
-            <td>6</td>
-            <td>
-              <div><button>Edit</button></div>
-              <div><button onclick="return confirm ('Are you sure to remove this employee?')">Remove</button></div>
-            </td>
-          </tr>
-          <tr>
-            <td>20210003</td>
-            <td>Shrouk</td>
-            <td>Full-stack Developer</td>
-            <td>6</td>
-            <td>
-              <div><button>Edit</button></div>
-              <div><button onclick="return confirm ('Are you sure to remove this employee?')">Remove</button></div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>List/Search Employees</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/Navbar.css" />
+		<link rel="stylesheet" href="css/Table.css" />
+	</head>
+	<body>
+		<div class="header">
+			<div class="containerNav">
+				<a href="H Home.html" title="HR-System">
+					<img
+						class="logo"
+						src="images/hr-logo-zip-file (1)/png/logo-no-background.png"
+					/>
+				</a>
+				<div class="links">
+					<span class="icons">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+					<ul>
+						<li></li>
+						<li><a href="H Home.html">Home</a></li>
+						<li><a href="Add Employee.html">Add an Employee</a></li>
+						<li class="test">
+							<a href="Show Employees.html">List/Search Employees</a>
+						</li>
+						<li><a href="Update-Delete Employee.html">Edit an Employee</a></li>
+						<li><a href="Show Vactions.html">Vacations Request</a></li>
+						<li><a href="Submit Vacation.html">Submit a Vacation</a></li>
+						<li><a href="Home.html">Sign Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<section class="Conatiner">
+			<form method="post">
+				<label class="search">Search Employees: </label>
+				<input
+					class="srchfield"
+					type="search"
+					name="Search"
+					placeholder="Search by Name"
+				/>
+				<input class="send" type="submit" value="Search" />
+				<hr />
+			</form>
+			<table class="table">
+				<caption class="caption">
+					Employees List
+				</caption>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Employee Name</th>
+						<th>Job Title</th>
+						<th>Available Vacation<span class="span">(Days/Month)</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>20210000</td>
+						<td>Abdallah</td>
+						<td>Software Developer</td>
+						<td>6</td>
+						<td>
+							<div><button>Edit</button></div>
+							<div>
+								<button
+									onclick="return confirm ('Are you sure to remove this employee?')"
+								>
+									Remove
+								</button>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>20210001</td>
+						<td>Ahmed</td>
+						<td>IT Support Specialist</td>
+						<td>6</td>
+						<td>
+							<div><button>Edit</button></div>
+							<div>
+								<button
+									onclick="return confirm ('Are you sure to remove this employee?')"
+								>
+									Remove
+								</button>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>20210002</td>
+						<td>Hadeer</td>
+						<td>Marketing Manager</td>
+						<td>6</td>
+						<td>
+							<div><button>Edit</button></div>
+							<div>
+								<button
+									onclick="return confirm ('Are you sure to remove this employee?')"
+								>
+									Remove
+								</button>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>20210003</td>
+						<td>Shrouk</td>
+						<td>Full-stack Developer</td>
+						<td>6</td>
+						<td>
+							<div><button>Edit</button></div>
+							<div>
+								<button onclick="return confirm ('Are you sure to remove this employee?')">
+                  Remove
+								</button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+	</body>
 </html>

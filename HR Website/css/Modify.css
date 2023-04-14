@@ -1,16 +1,16 @@
-.submited{
-    width: 100%;
-    margin: auto;
+.submited {
+	width: 100%;
+	margin: auto;
 }
 
-.submited .send{
-    width: 30%;
-    margin-top: 20px;
-    display: inline-block;
+.submited .send {
+	width: 30%;
+	margin-top: 20px;
+	display: inline-block;
 }
-.submited .send:first-child{
-    margin-right: 10px;
+.submited .send:first-child {
+	margin-right: 10px;
 }
-.Add div{
-    margin-bottom: 15px;
+.Add div {
+	margin-bottom: 15px;
 }

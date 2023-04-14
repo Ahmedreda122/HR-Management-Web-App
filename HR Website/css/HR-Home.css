@@ -15,7 +15,7 @@ a {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16.3px;
 }
-.links ul{
+.links ul {
 	list-style: none;
 	position: sticky;
 	top: 2.5px;
@@ -29,9 +29,8 @@ a {
 	background-color: var(--white-color);
 	border-bottom: 1.5px solid rgba(232, 229, 229, 0.602);
 	box-shadow: 3px 3px 3px var(--shadow-color);
-	gap:80%;
+	gap: 80%;
 }
-
 
 /* done */
 .Father {
@@ -61,5 +60,3 @@ div h1 {
 	justify-content: space-around;
 	gap: 84%;
 }
-
-
