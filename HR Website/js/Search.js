@@ -4,6 +4,15 @@ const rows = tableRows.getElementsByTagName("tr"); // array of rows (tr)
 const cption = document.querySelector(".caption"); // caption
 
 srchInput.addEventListener("input", function () {
+  let icon = document.getElementsByTagName("svg")[0];
+  if (srchInput.value === "") {
+    icon.style.display = ""; // Show the icon again when there is no input
+  } else {
+    icon.style.display = "none"; // Hide the icon when the user type anything
+  }
+});
+
+srchInput.addEventListener("input", function () {
   let found = false;
   const item = srchInput.value.toLowerCase();
   for (let i = 2; i < rows.length; i++) {
@@ -37,9 +46,12 @@ const rmvbtn = document.getElementsByClassName("remove"); // array of all remove
 for (let i = 0; i < rmvbtn.length; i++) {
   rmvbtn[i].onclick = function () {
     if (confirm("Are you sure to remove this employee?")) {
+      // console.log(i + 2);
       rows[i + 2].remove();
+      // rmvbtn = document.getElementsByClassName("remove");
     }
   };
+
 }
 // const rmvbtn = document.getElementsByClassName("remove"); // array of all remove buttons
 // for (let i = 0; i < rmvbtn.length; i++) {

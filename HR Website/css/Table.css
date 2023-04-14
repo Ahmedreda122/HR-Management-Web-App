@@ -93,14 +93,14 @@ hr {
   margin-top: 12px;
 }
 svg {
-  width: 20px;
-  height: 33px;
+  width: 21px;
+  height: 34px;
   margin-left: -30px;
   /* z-index: 10; */
   position: relative;
   top: 11px;
-  padding: fit-content;
-  background-color: var(--white-color);
+  padding-right: 4px;
+  /* background-color: var(--white-color); */
 }
 /* svg:hover {
   animation: bounce 5s infinite;
