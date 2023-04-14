@@ -11,23 +11,29 @@
     <title>Update Employee</title>
   </head>
   <body>
-    <nav>
-      <ul class="links">
-        <li>
-          <div class="logo">
-            <a href="M Home.html" title="HR-System">
-              <img src="images/hr-logo-zip-file (1)/png/logo-no-background.png" />
-            </a>
-          </div>
-        </li>
-        <li><a href=" M Home.html">Home</a></li>
-        <li><a href="Add HR.html">Add an HR</a></li>
-        <li class="test"><a href="Show HR.html">List/Search HRs</a></li>
-        <li><a href="Update-Delete HR.html">Edit an HR</a></li>
-        <li><a href="Vacation Action.html">Vacations Action</a></li>
-        <li><a href="Home.html">Sign Out</a></li>
-      </ul>
-    </nav>
+    <div class="header">
+      <div class="containerNav">
+        <a href="H Home.html" title="HR-System">
+          <img class="logo" src="images/hr-logo-zip-file (1)/png/logo-no-background.png" />
+          </a>
+        
+          <div class="links">
+        <span class="icons">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <ul>
+          <li><a href=" M Home.html">Home</a></li>
+          <li><a href="Add HR.html">Add an HR</a></li>
+          <li class="test"><a href="Show HR.html">List/Search HRs</a></li>
+          <li><a href="Update-Delete HR.html">Edit an HR</a></li>
+          <li><a href="Vacation Action.html">Vacations Action</a></li>
+          <li><a href="Home.html">Sign Out</a></li>
+        </ul>
+       </div>
+      </div>
+  </div>
     <section class="Conatiner">
     <form method="post" class = "Add">
       <div>
@@ -95,16 +101,16 @@
           placeholder=" Write the Vacation Days"
         />
       </div>
-      <div>
+      <!-- <div>
         <label> Update Number of Approved Vacation Days:</label>
         <input
           type="number"
           name="U_Approved_Vacation_Days"
           placeholder=" Write the Approved Vacation Days"
         />
-      </div>
+      </div> -->
       <div class="submited">
-        <input type="submit" value="Delete This User" 
+        <input type="submit" value="Delete" 
         onclick="return confirm ('Are you sure to delete this employee ?')" class="send"/>
         <input type="submit" value="Update" class="send"/>
       </div>

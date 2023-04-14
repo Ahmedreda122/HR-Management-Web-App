@@ -11,24 +11,32 @@
     <title>Update Employee</title>
   </head>
   <body>
-    <nav>
-      <ul class="links">
-        <li>
-          <div class="logo">
-            <a href="H Home.html" title="HR-System">
-              <img src="images/hr-logo-zip-file (1)/png/logo-no-background.png" />
-            </a>
-          </div>
-        </li>
-        <li><a href="H Home.html">Home</a></li>
-        <li><a href="Add Employee.html">Add an Employee</a></li>
-        <li class="test"><a href="Show Employees.html">List/Search Employees</a></li>
-        <li><a href="Update-Delete Employee.html">Edit an Employee</a></li>
-        <li><a href="Show Vactions.html">Vacations Request</a></li>
-        <li><a href="Submit Vacation.html">Submit a Vacation</a></li>
-        <li><a href="Home.html">Sign Out</a></li>
-      </ul>
-    </nav>
+    <div class="header">
+      <div class="containerNav">
+        <a href="H Home.html" title="HR-System">
+          <img class="logo" src="images/hr-logo-zip-file (1)/png/logo-no-background.png" />
+          </a>
+        
+          <div class="links">
+        <span class="icons">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <ul>
+          <li>
+          </li>
+          <li><a href="H Home.html">Home</a></li>
+          <li><a href="Add Employee.html">Add an Employee</a></li>
+          <li class="test"><a href="Show Employees.html">List/Search Employees</a></li>
+          <li><a href="Update-Delete Employee.html">Edit an Employee</a></li>
+          <li><a href="Show Vactions.html">Vacations Request</a></li>
+          <li><a href="Submit Vacation.html">Submit a Vacation</a></li>
+          <li><a href="Home.html">Sign Out</a></li>
+        </ul>
+       </div>
+      </div>
+  </div>
     <section class="Conatiner">
     <form method="post" class = "Add">
       <div>
@@ -96,16 +104,16 @@
           placeholder=" Write the Vacation Days"
         />
       </div>
-      <div>
+      <!-- <div>
         <label> Update Number of Approved Vacation Days:</label>
         <input
           type="number"
           name="U_Approved_Vacation_Days"
           placeholder=" Write the Approved Vacation Days"
         />
-      </div>
+      </div> -->
       <div class="submited">
-        <input type="submit" value="Delete This User" 
+        <input type="submit" value="Delete" 
         onclick="return confirm ('Are you sure to delete this employee ?')" class="send"/>
         <input type="submit" value="Update" class="send"/>
       </div>

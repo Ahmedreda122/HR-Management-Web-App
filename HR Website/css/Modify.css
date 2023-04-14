@@ -1,11 +1,12 @@
 .submited{
-    width: 70%;
+    width: 100%;
     margin: auto;
 }
 
 .submited .send{
-    width: 50%;
+    width: 30%;
     margin-top: 20px;
+    display: inline-block;
 }
 .submited .send:first-child{
     margin-right: 10px;

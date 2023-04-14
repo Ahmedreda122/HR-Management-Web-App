@@ -1,3 +1,39 @@
+:root {
+	--main-color: rgb(0, 128, 255);
+	--white-color: rgb(252, 253, 253);
+	--shadow-color: rgba(185, 167, 167, 0.134);
+}
+.logo {
+	width: 45.6px;
+	height: 50px;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(0, 128, 255);
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16.3px;
+}
+.links ul{
+	list-style: none;
+	position: sticky;
+	top: 2.5px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 2.5px;
+	padding: 0px;
+	background-color: var(--white-color);
+	border-bottom: 1.5px solid rgba(232, 229, 229, 0.602);
+	box-shadow: 3px 3px 3px var(--shadow-color);
+	gap:80%;
+}
+
+
+/* done */
 .Father {
 	width: 100%;
 	display: grid;
@@ -25,3 +61,5 @@ div h1 {
 	justify-content: space-around;
 	gap: 84%;
 }
+
+
