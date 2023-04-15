@@ -78,7 +78,7 @@ document.forms[0].onsubmit = function (event) {
 		});
 	}
 
-	// His Age is less than 18 Years
+	// His Age is should be higher than 18 Years
 	if (BrthDate.getFullYear() > 2005) {
 		event.preventDefault();
 		alert("Birth Date is not Allowed (Age > 18), Please try again");

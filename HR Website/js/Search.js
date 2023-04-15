@@ -44,20 +44,16 @@ srchInput.addEventListener("input", function () {
 
 const rmvbtn = document.getElementsByClassName("remove"); // array of all remove buttons
 for (let i = 0; i < rmvbtn.length; i++) {
-  rmvbtn[i].onclick = function () {
+  rmvbtn[i].onclick = function (event) {
     if (confirm("Are you sure to remove this employee?")) {
-      // console.log(i + 2);
-      rows[i + 2].remove();
-      // rmvbtn = document.getElementsByClassName("remove");
+      console.log(i);
+      const row = event.target.parentElement.parentElement;
+      row.parentElement.remove();
+    }
+    if (rmvbtn.length == 0) {
+      //if there is no remove buttons then there is no data
+      // then hide the header table to make it looks good
+      rows[1].style.display = "none";
     }
   };
-
 }
-// const rmvbtn = document.getElementsByClassName("remove"); // array of all remove buttons
-// for (let i = 0; i < rmvbtn.length; i++) {
-//   rmvbtn[i].onclick = function () {
-//     if (confirm("Are you sure to remove this employee?")) {
-//       rmvbtn[i].closest("tr").parentNode.removeChild(rmvbtn[i].closest("tr"));
-//     }
-//   };
-// }
