@@ -1,77 +1,77 @@
 .Conatiner {
-  height: 80%;
-  /* padding: 10px; */
-  /* width: fit-content; */
-  text-align: center;
-  /* padding: 5%; */
-  width: 50%;
-  background-color: rgb(252, 253, 253);
-  border: 1.47px solid rgba(232, 229, 229, 0.602);
-  border-radius: 25px;
-  /* margin: auto; */
-  margin: 15px auto;
+	height: 80%;
+	/* padding: 10px; */
+	/* width: fit-content; */
+	text-align: center;
+	/* padding: 5%; */
+	width: 50%;
+	background-color: rgb(252, 253, 253);
+	border: 1.47px solid rgba(232, 229, 229, 0.602);
+	border-radius: 25px;
+	/* margin: auto; */
+	margin: 15px auto;
 }
 .Conatiner .Add {
-  height: 100%;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
+	height: 100%;
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
 }
 .Add div {
-  display: block;
-  /* justify-content: space-between; */
-  margin-top: 20px;
+	display: block;
+	/* justify-content: space-between; */
+	margin-top: 20px;
 }
 .Add div label {
-  /* margin: auto; */
-  max-width: 250px;
-  font-size: 15px;
-  word-wrap: break-word;
-  text-align: left;
-  display: block;
+	/* margin: auto; */
+	max-width: 250px;
+	font-size: 15px;
+	word-wrap: break-word;
+	text-align: left;
+	display: block;
 }
 .Add div input {
-  margin: auto;
-  display: block;
-  width: 100%;
-  font-size: 15px;
+	margin: auto;
+	display: block;
+	width: 100%;
+	font-size: 15px;
 }
 .Add div input::placeholder {
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .Date,
 select {
-  padding: 10px;
-  width: 300px;
-  border: 2px solid rgb(232, 229, 229);
-  border-radius: 12.5px;
-  box-shadow: 2px 2px 2px var(--shadow-color);
-  transition: 1s;
-  font-size: 16px;
-  outline: none;
-  -webkit-border-radius: 12.5px;
-  -moz-border-radius: 12.5px;
-  -ms-border-radius: 12.5px;
-  -o-border-radius: 12.5px;
+	padding: 10px;
+	width: 273.5px;
+	border: 2px solid rgb(232, 229, 229);
+	box-shadow: 2px 2px 2px var(--shadow-color);
+	transition: 1s;
+	font-size: 16px;
+	outline: none;
+	border-radius: 12.5px;
+	-webkit-border-radius: 12.5px;
+	-moz-border-radius: 12.5px;
+	-ms-border-radius: 12.5px;
+	-o-border-radius: 12.5px;
 }
 
 .Add .send {
-  width: 100px;
-  text-align: center;
-  margin: 20px auto;
+	width: 100px;
+	text-align: center;
+	margin: 20px auto;
 }
 .Conatiner .humRe {
-  font-size: 30px;
-  font-weight: bold;
-  color: black;
-  text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	color: black;
+	text-align: center;
 }
 hr {
-  width: 40%;
+	width: 40%;
 }
 .hrE {
-  width: 90%;
+	width: 90%;
 }
 /* section {
 	width: fit-content;

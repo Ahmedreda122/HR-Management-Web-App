@@ -12,10 +12,9 @@
   <body>
     <div class="header">
       <div class="containerNav">
-        <a href="H Home.html" title="HR-System">
+        <a href="M Home.html" title="HR-System">
           <img class="logo" src="images/hr-logo-zip-file (1)/png/logo-no-background.png" />
         </a>
-        
         <div class="links">
           <span class="icons">
             <span></span>
@@ -24,17 +23,17 @@
           </span>
           <ul>
             <li></li>
-            <li><a href="H Home.html">Home</a></li>
-            <li><a href="Add Employee.html">Add an Employee</a></li>
-            <li class="test"><a href="Show Employees.html">List/Search Employees</a></li>
-            <li><a href="Update-Delete Employee.html">Edit an Employee</a></li>
-            <li><a href="Show Vactions.html">Vacations Request</a></li>
-            <li><a href="Submit Vacation.html">Submit a Vacation</a></li>
+            <li><a href=" M Home.html">Home</a></li>
+            <li><a href="Add HR.html">Add an HR</a></li>
+            <li><a href="Show HR.html">List/Search HRs</a></li>
+            <li><a href="Update-Delete HR.html">Edit an HR</a></li>
+            <li><a href="Vacation Action.html">Vacations Action</a></li>
             <li><a href="Home.html">Sign Out</a></li>
           </ul>
         </div>
       </div>
     </div>
+
     
     <section class="Conatiner">
     <h1 class="caption">Vacations Page Action</h1>
@@ -55,11 +54,11 @@
             <td>2023-02-20</td>
             <td>2023-02-26</td>
             <td>Family Vacation</td>
-            <td>Pending</td>
+            <td class="status">Pending</td>
             <td>
               <div>
-                <button>Approve</button>
-                <button>Reject</button>
+                <button class="approve">Approve</button>
+                <button class="reject">Reject</button>
               </div>
             </td>
           </tr>
@@ -68,15 +67,16 @@
             <td>2023-03-20</td>
             <td>2023-03-26</td>
             <td>Doctor's Appointment</td>
-            <td>Pending</td>
+            <td class="status">Pending</td>
             <td>
               <div>
-                <button>Approve</button>
-                <button>Reject</button>
+                <button class="approve">Approve</button>
+                <button class="reject">Reject</button>
               </div> 
             </td>
           </tr>
         </tbody>
       </table>
+      <script src="js/VaccAction.js"></script>
   </body>
 </html>

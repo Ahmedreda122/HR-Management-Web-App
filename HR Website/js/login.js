@@ -1,6 +1,7 @@
 window.localStorage.setItem("Ahmed_Reda", "Ahmed45##");
 window.localStorage.setItem("Nate F", "12345678");
-window.localStorage.setItem("Arthur Morgan", "password");
+window.localStorage.setItem("Arthur Morgan", "password"); // Manager
+window.localStorage.setItem("Dutch", "dutch7890"); // Manager
 window.localStorage.setItem("MaryBeth", "Mary1254");
 // Get all keys from local storage
 const keys = Object.keys(localStorage);
@@ -16,15 +17,24 @@ usrname.onblur = function () {
 	pass.focus();
 };
 
+// Array of Managers' Names
+const ManagerNames = ["Arthur Morgan", "Dutch"];
+
 document.forms[0].onsubmit = function (event) {
 	let usrValid = false;
 	let passValid = false;
+	let isManager = false;
 
 	if (usrname.value.length < 30 && usrname.value.length >= 4) {
 		for (let i = 0; i < window.localStorage.length; i++) {
 			// Get the the key (Username) from localStorage
 			if (usrname.value == window.localStorage.key(i)) {
 				usrValid = true;
+				for (let j = 0; j < ManagerNames.length; ++j) {
+					if (usrname.value === ManagerNames[j]) {
+						isManager = true;
+					}
+				}
 				break;
 			}
 		}
@@ -54,6 +64,10 @@ document.forms[0].onsubmit = function (event) {
 
 	if (passValid && usrValid) {
 		event.preventDefault();
-		window.location.replace("../HR Website/H Home.html");
+		if (isManager) {
+			window.location.replace("../HR Website/M Home.html");
+		} else {
+			window.location.replace("../HR Website/H Home.html");
+		}
 	}
 };
