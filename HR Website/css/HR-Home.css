@@ -4,8 +4,9 @@
 	--shadow-color: rgba(185, 167, 167, 0.134);
 }
 .logo {
-	width: 45.6px;
-	height: 50px;
+	width: 51px;
+	height: 56px;
+	border-radius: 100%;
 }
 
 a {
@@ -29,7 +30,7 @@ a {
 	background-color: var(--white-color);
 	border-bottom: 1.5px solid rgba(232, 229, 229, 0.602);
 	box-shadow: 3px 3px 3px var(--shadow-color);
-	gap: 80%;
+	gap: 77.5%;
 }
 
 /* done */
@@ -54,9 +55,4 @@ div h1 {
 	margin: 9px 0 35px 20px;
 	font-size: 60px;
 	font-family: sans-serif;
-}
-
-.links {
-	justify-content: space-around;
-	gap: 84%;
 }

@@ -20,8 +20,9 @@
 	gap: 80%;
 }
 .header .containerNav a .logo {
-	width: 45.6px;
-	height: 50px;
+	width: 51px;
+	height: 56px;
+	border-radius: 100%;
 }
 .header .containerNav .links {
 	position: relative;
