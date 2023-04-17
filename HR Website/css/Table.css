@@ -135,13 +135,13 @@ svg {
 	outline: none;
 }
 
-.table tbody tr td span {
+.table tbody tr td .dot {
 	display: block;
 	padding: 0px;
 	width: 5px;
 	border: 5px solid orange;
 	border-radius: 100%;
 	position: relative;
-	top: 12px;
-	right: 5px;
+	top: 13px;
+	right: 6px;
 }
