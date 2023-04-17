@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/public.css" />
     <link rel="stylesheet" href="css/Navbar.css" />
     <link rel="stylesheet" href="css/Add-Modify.css">
-    <link rel="stylesheet" href="css/Modify.css">
+    <!-- <link rel="stylesheet" href="css/Modify.css"> -->
     <title>Update Employee</title>
   </head>
   <body>
@@ -76,12 +76,19 @@
       </div>
       <!-- <hr /> -->
       <div>
-        <label> Update Marital Status:</label>
-        <input
-          type="number"
-          name="U_Marital_Status"
-          placeholder=" Write the Marital Status"
-        />
+        <label>Update Gender: </label>
+        <select name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div>
+        <label> Update Marital Status: </label>
+        <select name="MaritalStatus">
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <option value="Divorced">Divorced</option>
+        </select>
       </div>
       <!-- <hr /> -->
       <!-- <div>

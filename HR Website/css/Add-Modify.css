@@ -43,7 +43,7 @@
 .Date,
 select {
 	padding: 10px;
-	width: 273.5px;
+	width: 100%;
 	border: 2px solid rgb(232, 229, 229);
 	box-shadow: 2px 2px 2px var(--shadow-color);
 	transition: 1s;
@@ -72,6 +72,23 @@ hr {
 }
 .hrE {
 	width: 90%;
+}
+
+.submited {
+	width: 100%;
+	margin: auto;
+}
+
+.submited .send {
+	width: 30%;
+	margin-top: 20px;
+	display: inline-block;
+}
+.submited .send:first-child {
+	margin-right: 10px;
+}
+.Add div {
+	margin-bottom: 15px;
 }
 /* section {
 	width: fit-content;
