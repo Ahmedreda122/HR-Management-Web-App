@@ -49,6 +49,7 @@
 					<div>
 						<label for="ID"> ID: </label>
 						<input
+						id="idInput"
 							type="number"
 							class="ID"
 							name="ID"
@@ -72,9 +73,11 @@
 							placeholder="Write Your Reason"
 						></textarea>
 					</div>
-					<input type="submit" value="Submit" class="send" />
+					<input type="submit" value="Submit" class="send" id = "submitBtn" />
+					<div class="hidden-div" style="display:none;">Vacation Submitted</div>
 				</form>
 			</div>
 		</section>
 	</body>
+	<script type="module" src="js/SubmitVac.js"></script>
 </html>

@@ -17,9 +17,7 @@ srchInput.addEventListener("input", function () {
   const item = srchInput.value.toLowerCase();
   for (let i = 2; i < rows.length; i++) {
     // start from 2 as we don't need to include the thead (table header)
-    const name = rows[i]
-      .getElementsByTagName("td")[1]
-      .textContent.toLocaleLowerCase();
+    const name = rows[i].getElementsByTagName("td")[1].textContent.toLocaleLowerCase();
     // textContent only applies to elements that can contain text, such as <p> or <span>
     // value returns the current value entered by the user
     // loop through table on column name which is column 1 and get its textContent
@@ -57,3 +55,17 @@ for (let i = 0; i < rmvbtn.length; i++) {
     }
   };
 }
+
+const editbtn = document.querySelectorAll(".edit");
+editbtn.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    // Extract the ID value of the corresponding row
+    // dataset property is used to show the data-id attribute of the tr element
+    const id = event.target.closest("tr").dataset.id;
+    // Store the ID value in localStorage
+    localStorage.setItem("employeeId", id);
+
+    // Redirect the user to the update page
+    window.location.href = "Update-Delete Employee.html";
+  });
+});
