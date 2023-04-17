@@ -8,25 +8,53 @@ const hidden = document.getElementsByClassName("hidden-div");
 const submitBtn = document.getElementById("submitBtn");
 // Find the input field for the ID
 const idInput = document.getElementById("idInput");
-
-const startDate = new Date(document.getElementById("StartD"));
-const endDate = new Date(document.getElementById("EndD"));
+const startD = document.getElementById("startD");
+const endD = document.getElementById("endD");
 
 // Add a click event listener to the submit button
 document.forms[0].onsubmit = function (event) {
-	isValidID = false;
-	isValidDate = false;
+	const valid = localStorage.getItem("validIds").split(",");
 	// Check if the input ID is in the list of valid IDs
-	if (validIds.includes(idInput.value) && idInput.value !== "") {
-		event.preventDefault();
-		window.location.replace("../HR Website/H Home.html");
-		isValidID = true;
+	let checkid = false;
+	if (valid.includes(idInput.value) && idInput !== "") {
+		// hidden[0].style.display = "block";
+		// event.preventDefault();
+		checkid = true;
+		// console.log("done")
 	} else {
-		// ID is invalid, show an error message
 		event.preventDefault();
-		window.location.replace("M Home.html");
+		// ID is invalid, show an error message
+		idInput.focus();
+		idInput.style.borderColor = "red";
+		idInput.addEventListener("input", function () {
+			idInput.style.borderColor = ""; // set to default border color
+		});
 		alert("Invalid ID");
 	}
-
-	// if (endDate.value > startDate.value) alert("Vacation Submitted");
+	let checkDate = false;
+	const start = new Date(startD.value);
+	const end = new Date(endD.value);
+	if (start >= end) {
+		event.preventDefault();
+		alert("End date must be after start date");
+		endD.focus();
+		endD.style.borderColor = "red";
+		startD.style.borderColor = "red";
+		startD.addEventListener("input", function () {
+			startD.style.borderColor = ""; // set to default border color
+		});
+		endD.style.borderColor = "red";
+		endD.addEventListener("input", function () {
+			endD.style.borderColor = ""; // set to default border color
+		});
+	} else {
+		checkDate = true;
+	}
+	if (checkDate && checkid) {
+		event.preventDefault();
+		alert("Vacation Submitted");
+		window.location.href = "H Home.html";
+	}
+	// console.log("Checking date is : " + start)
+	// console.log("Checking date is : " + end)
 };

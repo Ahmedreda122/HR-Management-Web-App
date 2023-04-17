@@ -1,8 +1,29 @@
-// Retrieve the stored ID value from localStorage
-const id = localStorage.getItem('employeeId');
+const employees = JSON.parse(window.localStorage.getItem("employees"));
 
-// Set the value of the ID field to the retrieved value
-document.querySelector('#id').value = id;
+const usrID = document.querySelector("[name=U_ID]");
+console.log(usrID);
+let usrName = document.querySelector("[name=E_User_Name]");
+const email = document.querySelector("[name=U_Email]");
+const address = document.querySelector("[name=U_Address]");
+const Mstatus = document.querySelector("[name=MaritalStatus]");
+const gender = document.querySelector("[name=gender]");
+const nphone = document.querySelector("[name=U_Phone_Number]");
+const salary = document.querySelector("[name=U_Salary]");
+const VaccDay = document.querySelector("[name=U_Vacation_Days]");
 
-// Clear the stored ID value from localStorage as we don't need it again
-localStorage.removeItem('employeeId');
+const currentEmployeeID = localStorage.getItem("currentEmployeeID");
+document.querySelector("#id").value = currentEmployeeID;
+for (var i = 0; i < employees.length; i++) {
+	if (employees[i].ID == currentEmployeeID) {
+		usrID.value = employees[i].ID;
+		usrName.value = employees[i].username;
+		email.setAttribute("value", `${employees[i].email}`);
+		address.setAttribute("value", `${employees[i].address}`);
+		Mstatus.setAttribute("value", `${employees[i].maritalStatus}`);
+		gender.setAttribute("value", `${employees[i].gender}`);
+		nphone.setAttribute("value", `${employees[i].phoneNumber}`);
+		salary.setAttribute("value", `${employees[i].salary}`);
+		VaccDay.value = employees[i].vacationDays;
+		break;
+	}
+}

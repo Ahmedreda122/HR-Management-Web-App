@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="css/Navbar.css" />
 		<link rel="stylesheet" href="css/Add-Modify.css" />
 		<link rel="stylesheet" href="css/Submit-vac.css" />
-		<title>Submit a Vacation</title>
+		<title>Home</title>
 	</head>
 	<body>
 		<div class="header">
@@ -32,7 +32,6 @@
 						<li>
 							<a href="Show Employees.html">List/Search Employees</a>
 						</li>
-						<li><a href="Update-Delete Employee.html">Edit an Employee</a></li>
 						<li><a href="Show Vactions.html">Vacations Request</a></li>
 						<li><a href="Submit Vacation.html">Submit a Vacation</a></li>
 						<li><a href="Home.html">Sign Out</a></li>
@@ -60,8 +59,8 @@
 					<div>
 						<label for="Start_Date"> Start Date: </label>
 						<input
+							id="startD"
 							type="date"
-							id="StartD"
 							class="Date"
 							name="Start Date"
 							required
@@ -69,7 +68,7 @@
 					</div>
 					<div>
 						<label for="End_Date"> End Date: </label>
-						<input type="date" id="EndD" class="Date" name="EndDate" required />
+						<input id="endD" type="date" class="Date" name="EndDate" required />
 					</div>
 					<div>
 						<label for="Reason"> Reason: </label>
@@ -85,5 +84,5 @@
 			</div>
 		</section>
 	</body>
-	<script type="module" src="js/SubmitVac.js"></script>
+	<script src="js/SubmitVac.js"></script>
 </html>
