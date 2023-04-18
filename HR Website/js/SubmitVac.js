@@ -6,7 +6,21 @@ const submitBtn = document.getElementById("submitBtn");
 const idInput = document.getElementById("idInput");
 const startD = document.getElementById("startD");
 const endD = document.getElementById("endD");
+const reason = document.getElementById("reason");
 
+function sbmtVac(e) {
+  // create vacation request object
+  const vacationRequest = {
+    employeeID: idInput.value,
+    startDate: startD.value,
+    endDate: endD.value,
+    reason: reason.value,
+  };
+  // Store the vacation object in local storage array
+  let vacations = JSON.parse(localStorage.getItem("vacations")) || [];
+  vacations.push(vacationRequest);
+  localStorage.setItem("vacations", JSON.stringify(vacations));
+}
 // Add a click event listener to the submit button
 document.forms[0].onsubmit = function (event) {
   // Check if the input ID is in the list of valid IDs
@@ -50,8 +64,9 @@ document.forms[0].onsubmit = function (event) {
   }
   if (checkDate && checkid) {
     event.preventDefault();
+    sbmtVac();
     alert("Vacation Submitted");
-    window.location.href = "H Home.html";
+    window.location.reload();
   }
   // console.log("Checking date is : " + start)
   // console.log("Checking date is : " + end)
