@@ -49,8 +49,8 @@ for (let i = 0; i < rmvbtn.length; i++) {
       const ID = event.target.closest("tr").querySelector("#ID").innerHTML;
       for (let j = 0; j < employees.length; j++) {
         if (employees[j].ID == ID) {
-          const nextID = localStorage.getItem("ID") - 1; // decrement ID from local storage
-          window.localStorage.setItem("ID", nextID); // (save changes)
+          // const nextID = localStorage.getItem("ID") - 1; // decrement ID from local storage
+          // window.localStorage.setItem("ID", nextID); // (save changes)
           employees.splice(j, 1); // remove the element at index j
           // number 1 represents the number of elements to remove from the array from index j
           localStorage.setItem("employees", JSON.stringify(employees)); // (save changes)

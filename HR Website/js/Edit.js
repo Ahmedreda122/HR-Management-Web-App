@@ -57,8 +57,8 @@ deleteButton.addEventListener("click", (event) => {
   event.preventDefault();
   for (var i = 0; i < employees.length; i++) {
     if (employees[i].ID == currentEmployeeID) {
-      const nextID = localStorage.getItem("ID") - 1; // decrement ID from local storage
-      window.localStorage.setItem("ID", nextID); // (save changes)
+      // const nextID = localStorage.getItem("ID") - 1; // decrement ID from local storage
+      // window.localStorage.setItem("ID", nextID); // (save changes)
       employees.splice(i, 1); // remove the element at index i
       // number 1 represents the number of elements to remove from the array from index i
       break;
