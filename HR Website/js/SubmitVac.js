@@ -15,6 +15,7 @@ function sbmtVac(e) {
     startDate: startD.value,
     endDate: endD.value,
     reason: reason.value,
+	status: "Pending",
   };
   // Store the vacation object in local storage array
   let vacations = JSON.parse(localStorage.getItem("vacations")) || [];
