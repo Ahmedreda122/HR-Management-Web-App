@@ -26,7 +26,7 @@ document.forms[0].onsubmit = function (event) {
   // Check if the input ID is in the list of valid IDs
   let checkid = false;
   for (let i = 0; i < employees.length; i++) {
-    if (employees[i].ID.includes(idInput.value) && idInput !== "") {
+    if (employees[i].ID === idInput.value && idInput !== "") {
       // event.preventDefault();
       checkid = true;
       // console.log("done")
