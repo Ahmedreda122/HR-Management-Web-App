@@ -1,21 +1,21 @@
-// localStorage.removeItem("ID");
-// localStorage.removeItem("employees");
+// localStorage.removeItem("IDH");
+// localStorage.removeItem("HRs");
 // IF ID not Exists
-if (window.localStorage.getItem("ID") === null) {
+if (window.localStorage.getItem("IDH") === null) {
   // Create the intial value of ID
-  window.localStorage.setItem("ID", 20230000);
+  window.localStorage.setItem("IDH", 20231000);
 }
 // Increment the value of the current ID by 1 to be the Next ID
-const nextID = localStorage.getItem("ID") - -1;
+const nextID = localStorage.getItem("IDH") - -1;
 // Display the Next ID In the input field by changing the value
 document.getElementById("ID").setAttribute("value", nextID);
 
-function addEmployee(e) {
+function addHr(e) {
   // save the Next ID in localStorage
-  window.localStorage.setItem("ID", nextID);
+  window.localStorage.setItem("IDH", nextID);
 
   // get the values of the form fields
-  const ID = localStorage.getItem("ID");
+  const ID = localStorage.getItem("IDH");
   const username = document.querySelector("input[name=EUserName]").value;
   const email = document.querySelector("input[name=Email]").value;
   const address = document.querySelector("input[name=Address]").value;
@@ -25,13 +25,13 @@ function addEmployee(e) {
     "select[name=MaritalStatus]"
   ).value;
   const birthDate = document.querySelector("input[name=Birth_Date]").value;
-  const jobTitle = document.querySelector('input[name="Job Title"]').value;
+  //   const jobTitle = document.querySelector('input[name="Job Title"]').value;
   const salary = document.querySelector("input[name=Salary]").value;
   const vacationDays = document.querySelector("input[name=VacationDays]").value;
   const approvedVacationDays = 0;
 
-  // create an object with the form values
-  const employee = {
+  // **create an object with the form values
+  const HR = {
     ID,
     username,
     email,
@@ -40,19 +40,20 @@ function addEmployee(e) {
     gender,
     maritalStatus,
     birthDate,
-    jobTitle,
     salary,
     vacationDays,
     approvedVacationDays,
   };
   // get the array of employees from local storage, or create a new empty array if none exists
-  let employees = JSON.parse(localStorage.getItem("employees")) || [];
+  let HRs = JSON.parse(localStorage.getItem("HRs")) || [];
   // add the new employee object to the array
-  employees.push(employee);
+  HRs.push(HR);
 
   // save the updated array back to local storage
-  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("HRs", JSON.stringify(HRs));
 }
+
+// **check data that in form
 
 function isValidUsername(username) {
   // A Form of user name that The name should start with a letter at lease
@@ -81,14 +82,16 @@ function isValidPhNum(phoneNum) {
 }
 
 document.forms[0].onsubmit = function (event) {
-  let username = document.querySelector("[name = EUserName");
+  let username = document.querySelector("[name = EUserName]");
   let email = document.querySelector("[name=Email]");
   let phoneNum = document.querySelector("[name=PhoneNumber]");
   let BrthDate = new Date(document.querySelector(".Date").value);
   let nVacc = document.querySelector("[name=VacationDays]");
 
   const MAX_VACATIONS_NUM = 10;
-
+  console.log(`username ${username}`);
+  console.log(`email ${email}`);
+  console.log(`phoneNum ${phoneNum}`);
   let usrnmValid = isValidUsername(username.value);
   let EmlValid = isValidEmail(email.value);
   let phoneValid = isValidPhNum(phoneNum.value);
@@ -147,9 +150,9 @@ document.forms[0].onsubmit = function (event) {
 	  Update the value of the Current Stored ID in the Local Storage with the Next ID */
   if (!event.defaultPrevented) {
     event.preventDefault();
-    addEmployee();
+    addHr();
     // reset the form fields
     window.location.reload();
-    alert("Employee has been added successfully");
+    alert("Hr has been added successfully");
   }
 };

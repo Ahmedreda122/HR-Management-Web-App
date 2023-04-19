@@ -13,7 +13,10 @@
     <div class="header">
       <div class="containerNav">
         <a href="M Home.html" title="HR-System">
-          <img class="logo" src="images/hr-logo-zip-file (1)/png/logo-no-background.png" />
+          <img
+            class="logo"
+            src="images/hr-logo-zip-file (1)/png/logo-no-background.png"
+          />
         </a>
         <div class="links">
           <span class="icons">
@@ -37,57 +40,52 @@
       <div class="humRe">
         <p>Add a HR</p>
       </div>
-      <hr>
-    <form action="" method = "post" class="Add">
-      <div>
-        <label> User Name:</label>
-        <input
-          type="text"
-          required
-          name="EUserName"
-          placeholder="Write the User Name"
-        />
-      </div>
-      <!-- <hr /> -->
-      
-      <!-- <hr /> -->
-      <div>
-        <label> User ID: </label>
-        <input
-          type="text"
-          id = "ID"
-          name="ID"
-          disabled
-        />
-      </div>
-      <!-- <hr /> -->
-      <div>
-        <label> Email: </label>
-        <input
-          type="text"
-          required
-          name="Email"
-          placeholder="Write the Email"
-        />
-      </div>
-      <!-- <hr /> -->
-      <div>
-        <label> Address: </label>
-        <input
-          type="text"
-          required
-          name="Address"
-          placeholder="Write the Address"
-        />
-      </div>
-      <!-- <hr /> -->
-      <div>
-        <label> Phone Number: </label>
-        <input
-          type="tel"
-          required
-          name="PhoneNumber"
-          placeholder="Write the Phone Number"
+      <hr />
+      <form action="" method="post" class="Add">
+        <div>
+          <label> User Name:</label>
+          <input
+            type="text"
+            required
+            name="EUserName"
+            placeholder="Write the User Name"
+          />
+        </div>
+        <!-- <hr /> -->
+
+        <!-- <hr /> -->
+        <div>
+          <label> User ID: </label>
+          <input type="text" id="ID" name="ID" disabled />
+        </div>
+        <!-- <hr /> -->
+        <div>
+          <label> Email: </label>
+          <input
+            type="text"
+            required
+            name="Email"
+            placeholder="Write the Email"
+          />
+        </div>
+        <!-- <hr /> -->
+        <div>
+          <label> Address: </label>
+          <input
+            type="text"
+            required
+            name="Address"
+            placeholder="Write the Address"
+          />
+        </div>
+        <!-- <hr /> -->
+        <div>
+          <label> Phone Number: </label>
+          <input
+            type="tel"
+            required
+            name="PhoneNumber"
+            placeholder="Write the Phone Number"
           />
         </div>
         <!-- <hr /> -->
@@ -100,58 +98,54 @@
         </div>
         <div class="selector">
           <label> Marital Status: </label>
-        <select name="MaritalStatus">
-          <option value="Single">Single</option>
-          <option value="Married">Married</option>
-          <option value="Divorced">Divorced</option>
-        </select>
-      </div>
-      <!-- <hr /> -->
-      <div>
-        <label> Date of Birth: </label>
-        <input class ="Date" type="date" required name="Birth_Date" value="2000-01-01" />
-      </div>
-      <!-- <hr /> -->
-      <div>
-        <label> Job Title: </label>
-        <input name="Job Title"
-        type="text"
-        value = "HR"
-        disabled
-        placeholder="Write the Job Title">
-        
-        </input>
-      </div>
-      <div>
-        <label> Salary: </label>
-        <input
-          type="number"
-          required
-          name="Salary"
-          placeholder="Write the Salary"
-        />
-      </div>
-      <!-- <hr /> -->
-      <div>
-        <label> Number of Vacation: </label>
-        <input
-          type="number"
-          required
-          name="VacationDays"
-          placeholder="Write the Vacation Days"
-        />
-      </div>
-      <!-- <hr /> -->
-      <!-- HIDDEN -->
-      <div style= "display: none;">
-        <input type="number" name="ApprovedVacationDays" value ="0" />
-      </div>
-      <!-- <hr /> -->
-      <div class="Add">
-        <input type="submit" class="send" value="Add" />
-      </div>
-    </form>
+          <select name="MaritalStatus">
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Divorced">Divorced</option>
+          </select>
+        </div>
+        <!-- <hr /> -->
+        <div>
+          <label> Date of Birth: </label>
+          <input
+            class="Date"
+            type="date"
+            required
+            name="Birth_Date"
+            value="2000-01-01"
+          />
+        </div>
+        <!-- <hr /> -->
+        <div>
+          <label> Salary: </label>
+          <input
+            type="number"
+            required
+            name="Salary"
+            placeholder="Write the Salary"
+          />
+        </div>
+        <!-- <hr /> -->
+        <div>
+          <label> Number of Vacation: </label>
+          <input
+            type="number"
+            required
+            name="VacationDays"
+            placeholder="Write the Vacation Days"
+          />
+        </div>
+        <!-- <hr /> -->
+        <!-- HIDDEN -->
+        <div style="display: none">
+          <input type="number" name="ApprovedVacationDays" value="0" />
+        </div>
+        <!-- <hr /> -->
+        <div class="Add">
+          <input type="submit" class="send" value="Add" />
+        </div>
+      </form>
     </div>
-    <script src="js/AddEmployee.js"></script>
+    <script src="js/AddHr.js"></script>
   </body>
 </html>
