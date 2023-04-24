@@ -1,7 +1,6 @@
 const employees = JSON.parse(window.localStorage.getItem("employees"));
+const HRs = JSON.parse(window.localStorage.getItem("HRs"));
 
-// Find the submit button
-const submitBtn = document.getElementById("submitBtn");
 // Find the input field for the ID
 const idInput = document.getElementById("idInput");
 const startD = document.getElementById("startD");
@@ -15,25 +14,30 @@ function sbmtVac(e) {
     startDate: startD.value,
     endDate: endD.value,
     reason: reason.value,
-	status: "Pending",
+    status: "Pending",
   };
   // Store the vacation object in local storage array
   let vacations = JSON.parse(localStorage.getItem("vacations")) || [];
   vacations.push(vacationRequest);
   localStorage.setItem("vacations", JSON.stringify(vacations));
 }
-// Add a click event listener to the submit button
+
+// Add a submit event listener to the form
 document.forms[0].onsubmit = function (event) {
   // Check if the input ID is in the list of valid IDs
   let checkid = false;
+  let checkHR = false;
   for (let i = 0; i < employees.length; i++) {
-    if (employees[i].ID === idInput.value !== "") {
-      // event.preventDefault();
+    if (employees[i].ID === idInput.value && idInput.value !== "") {
       checkid = true;
-      // console.log("done")
     }
   }
-  if (!checkid) {
+  for (let i = 0; i < HRs.length; i++) {
+    if (HRs[i].ID === idInput.value && idInput.value !== "") {
+      checkHR = true;
+    }
+  }
+  if (!checkid && !checkHR) {
     event.preventDefault();
     // ID is invalid, show an error message
     idInput.focus();
@@ -42,6 +46,7 @@ document.forms[0].onsubmit = function (event) {
       idInput.style.borderColor = ""; // set to default border color
     });
     alert("Invalid ID");
+    // return; // add this to exit the function and prevent further code execution
   }
 
   let checkDate = false;
@@ -56,7 +61,6 @@ document.forms[0].onsubmit = function (event) {
     startD.addEventListener("input", function () {
       startD.style.borderColor = ""; // set to default border color
     });
-    endD.style.borderColor = "red";
     endD.addEventListener("input", function () {
       endD.style.borderColor = ""; // set to default border color
     });
@@ -69,6 +73,10 @@ document.forms[0].onsubmit = function (event) {
     alert("Vacation Submitted");
     window.location.reload();
   }
-  // console.log("Checking date is : " + start)
-  // console.log("Checking date is : " + end)
+  if (checkDate && checkHR) {
+    event.preventDefault();
+    sbmtVac();
+    alert("Vacation Submitted");
+    window.location.reload();
+  }
 };
