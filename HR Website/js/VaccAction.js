@@ -16,7 +16,7 @@ for (var i = 0; i < vacations.length; i++) {
 	<td>${vacations[i].startDate}</td>
 	<td>${vacations[i].endDate}</td>
 	<td>${vacations[i].reason}</td>
-	<td><span class="dot"></span><span class="status">${vacations[i].status}<span></td>
+	<td><span class="dot"></span><span class="status">${vacations[i].status}</span></td>
 	<td>
 	<div>
 	  <button class="approve">Approve</button>
@@ -80,13 +80,13 @@ for (let i = 0; i < aprvbttn.length; i++) {
   const status = aprvbttn[i].closest("tr").querySelector(".status").textContent;
 
   if (status !== "Pending") {
-    rejctbttn[i].disabled = true;
-    rejctbttn[i].style.backgroundColor = "silver";
-    rejctbttn[i].style.cursor = "default";
-
     aprvbttn[i].disabled = true;
     aprvbttn[i].style.backgroundColor = "silver";
     aprvbttn[i].style.cursor = "default";
+
+    rejctbttn[i].disabled = true;
+    rejctbttn[i].style.backgroundColor = "silver";
+    rejctbttn[i].style.cursor = "default";
   }
 }
 
@@ -94,10 +94,7 @@ const dots = document.querySelectorAll(".dot");
 for (let i = 0; i < vacations.length; i++) {
   if (vacations[i].status === "Rejected") {
     dots[i].style.borderColor = "red";
-  }
-}
-for (let i = 0; i < vacations.length; i++) {
-  if (vacations[i].status === "Approved") {
+  } else if (vacations[i].status === "Approved") {
     dots[i].style.borderColor = "green";
   }
 }
