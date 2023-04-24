@@ -16,12 +16,12 @@ for (var i = 0; i < employees.length; i++) {
   if (employees[i].ID == currentEmployeeID) {
     usrID.value = employees[i].ID;
     usrName.value = employees[i].username;
-    email.setAttribute("value", `${employees[i].email}`);
-    address.setAttribute("value", `${employees[i].address}`);
-    Mstatus.setAttribute("value", `${employees[i].maritalStatus}`);
-    gender.setAttribute("value", `${employees[i].gender}`);
-    nphone.setAttribute("value", `${employees[i].phoneNumber}`);
-    salary.setAttribute("value", `${employees[i].salary}`);
+    email.value = employees[i].email;
+    address.value = employees[i].address;
+    Mstatus.valu = employees[i].maritalStatus;
+    gender.value = employees[i].gender;
+    nphone.value = employees[i].phoneNumber;
+    salary.value = employees[i].salary;
     VaccDay.value = employees[i].vacationDays;
     break;
   }
