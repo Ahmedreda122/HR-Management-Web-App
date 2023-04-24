@@ -5,8 +5,12 @@ let tBody = document.querySelector("tbody");
 for (var i = 0; i < vacations.length; i++) {
   let data = `<tr>
 	<td id= "ID">${vacations[i].employeeID}</td>`;
-  if (employees[i].ID === vacations[i].employeeID) {
-    var data1 = `<td>${employees[i].username}</td>`;
+  let data1 = "";
+  for (var j = 0; j < employees.length; j++) {
+    if (employees[j].ID === vacations[i].employeeID) {
+      data1 = `<td>${employees[j].username}</td>`;
+      break;
+    }
   }
   let data2 = `
 	<td>${vacations[i].startDate}</td>
@@ -25,6 +29,7 @@ for (var i = 0; i < vacations.length; i++) {
   // Append data before end tag (</tbody>)
   tBody.insertAdjacentHTML("beforeend", data);
 }
+
 var isPending = true;
 const aprvbttn = document.querySelectorAll(".approve");
 const rejctbttn = document.querySelectorAll(".reject");
