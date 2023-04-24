@@ -41,6 +41,7 @@ srchInput.addEventListener("input", function () {
     rows[0].style.display = "";
   }
 });
+const vacations = JSON.parse(window.localStorage.getItem("vacations"));
 const rmvbtn = document.getElementsByClassName("remove"); // array of all remove buttons
 for (let i = 0; i < rmvbtn.length; i++) {
   rmvbtn[i].onclick = function (event) {
@@ -51,13 +52,20 @@ for (let i = 0; i < rmvbtn.length; i++) {
         if (HRs[j].ID == ID) {
           // const nextID = localStorage.getItem("ID") - 1; // decrement ID from local storage
           // window.localStorage.setItem("ID", nextID); // (save changes)
-          HRs.splice(j, 1); // remove the element at index j
+          HRs.splice(j, 1); // remove the element at index j then shift to fill the gap
           // number 1 represents the number of elements to remove from the array from index j
           localStorage.setItem("HRs", JSON.stringify(HRs)); // (save changes)
           location.reload();
           break;
         }
       }
+      for (let i = 0; i < vacations.length; i++) {
+        if (vacations[i].employeeID === ID) {
+          vacations.splice(i, 1); // remove the element at index i then shift to fill the gap
+          i--;
+        }
+      }
+      localStorage.setItem("vacations", JSON.stringify(vacations)); // (save changes)
     }
   };
 }

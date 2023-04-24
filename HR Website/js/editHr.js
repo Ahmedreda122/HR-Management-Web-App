@@ -57,19 +57,26 @@ updateButton.addEventListener("click", (event) => {
 });
 
 const deleteButton = document.querySelector('.send[value="Delete"]');
-
+const vacations = JSON.parse(window.localStorage.getItem("vacations"));
 deleteButton.addEventListener("click", (event) => {
   event.preventDefault();
-  for (var i = 0; i < HRs.length; i++) {
+  for (let i = 0; i < HRs.length; i++) {
     if (HRs[i].ID === currentHrID) {
       // const nextID = localStorage.getItem("ID") - 1; // decrement ID from local storage
       // window.localStorage.setItem("ID", nextID); // (save changes)
-      HRs.splice(i, 1); // remove the element at index i
+      HRs.splice(i, 1); // remove the element at index i then shift to fill the gap
       // number 1 represents the number of elements to remove from the array from index i
       break;
     }
   }
+  for (let i = 0; i < vacations.length; i++) {
+    if (vacations[i].employeeID === currentHrID) {
+      vacations.splice(i, 1); // remove the element at index i then shift to fill the gap
+      i--;
+    }
+  }
   // (save changes)
   localStorage.setItem("HRs", JSON.stringify(HRs));
+  localStorage.setItem("vacations", JSON.stringify(vacations));
   location.href = "Show HR.html";
 });
