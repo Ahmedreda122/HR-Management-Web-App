@@ -9,3 +9,7 @@ def index(request):
   "Employees" : Employee.objects.all()
     }
     return render(request, 'Emp/index.html', context)
+  
+def hey(request):
+  template = "Emp/index.html" 
+  
