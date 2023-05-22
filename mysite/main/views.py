@@ -19,3 +19,6 @@ def login(request):
 
 def HrHome(request):
     return render(request, 'HRWebsite/H Home.html')
+
+def MHome(request):
+    return render(request, 'HRWebsite/M Home.html')
