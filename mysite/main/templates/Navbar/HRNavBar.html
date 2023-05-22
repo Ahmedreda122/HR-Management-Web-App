@@ -1,0 +1,28 @@
+{% load static %}
+
+<nav class="header">
+	<div class="containerNav">
+		<a href="{% url 'HrHome'%}" title="HR-System">
+			<img
+				class="logo"
+				src="{% static 'images/hr-logo-zip-file (1)/png/logo-no-background.png' %}"
+			/>
+		</a>
+		<div class="links">
+			<span class="icons">
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+			<ul>
+				<li></li>
+				<li><a href="{% url 'HrHome' %}">Home</a></li>
+				<li><a href="{% url 'AddEmployee'%}">Add an Employee</a></li>
+				<li><a href="{% url 'ShowEmployees' %}">List/Search Employees</a></li>
+				<li><a href="{% url 'ShowVacations' %}">Vacations Request</a></li>
+				<li><a href="{% url 'SubmitVacation'%}">Submit a Vacation</a></li>
+				<li><a href="{% url 'Home' %}">Sign Out</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>

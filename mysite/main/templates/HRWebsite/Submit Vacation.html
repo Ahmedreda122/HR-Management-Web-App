@@ -1,88 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/public.css" />
-    <link rel="stylesheet" href="css/Navbar.css" />
-    <link rel="stylesheet" href="css/Add-Modify.css" />
-    <link rel="stylesheet" href="css/Submit-vac.css" />
-    <title>Home</title>
-  </head>
-  <body>
-    <div class="header">
-      <div class="containerNav">
-        <a href="H Home.html" title="HR-System">
-          <img
-            class="logo"
-            src="images/hr-logo-zip-file (1)/png/logo-no-background.png"
-          />
-        </a>
-        <div class="links">
-          <span class="icons">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          <ul>
-            <li></li>
-            <li><a href="H Home.html">Home</a></li>
-            <li><a href="Add Employee.html">Add an Employee</a></li>
-            <li>
-              <a href="Show Employees.html">List/Search Employees</a>
-            </li>
-            <li><a href="Show Vactions.html">Vacations Request</a></li>
-            <li><a href="Submit Vacation.html">Submit a Vacation</a></li>
-            <li><a href="Home.html">Sign Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <section class="Container-Vac">
-      <div class="Father">
-        <form method="POST" class="Add">
-          <div class="cap">
-            <h1>Vacation</h1>
-          </div>
-          <div>
-            <label for="ID"> ID: </label>
-            <input
-              id="idInput"
-              type="number"
-              class="ID"
-              name="ID"
-              placeholder="Write your ID"
-              required
-            />
-          </div>
-          <div>
-            <label for="Start_Date"> Start Date: </label>
-            <input
-              id="startD"
-              type="date"
-              class="Date"
-              name="Start Date"
-              required
-            />
-          </div>
-          <div>
-            <label for="End_Date"> End Date: </label>
-            <input id="endD" type="date" class="Date" name="EndDate" required />
-          </div>
-          <div>
-            <label for="Reason"> Reason: </label>
-            <textarea
-              id="reason"
-              name="Reason"
-              class="Date"
-              placeholder="Write Your Reason"
-            ></textarea>
-          </div>
-          <input type="submit" value="Submit" class="send" id="submitBtn" />
-        </form>
-      </div>
-    </section>
-  </body>
-  <script src="js/SubmitVac.js"></script>
+	{%load static%}
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{% static 'css/public.css'%}" />
+		<link rel="stylesheet" href="{% static 'css/Navbar.css'%}" />
+		<link rel="stylesheet" href="{% static 'css/Add-Modify.css'%}" />
+		<link rel="stylesheet" href="{% static 'css/Submit-vac.css' %}" />
+		<title>Home</title>
+	</head>
+	<body>
+		{% include 'Navbar/HRNavBar.html' %}
+		<section class="Container-Vac">
+			<div class="Father">
+				<form method="POST" class="Add">
+					<div class="cap">
+						<h1>Vacation</h1>
+					</div>
+					<div>
+						<label for="ID"> ID: </label>
+						<input
+							id="idInput"
+							type="number"
+							class="ID"
+							name="ID"
+							placeholder="Write your ID"
+							required
+						/>
+					</div>
+					<div>
+						<label for="Start_Date"> Start Date: </label>
+						<input
+							id="startD"
+							type="date"
+							class="Date"
+							name="Start Date"
+							required
+						/>
+					</div>
+					<div>
+						<label for="End_Date"> End Date: </label>
+						<input id="endD" type="date" class="Date" name="EndDate" required />
+					</div>
+					<div>
+						<label for="Reason"> Reason: </label>
+						<textarea
+							id="reason"
+							name="Reason"
+							class="Date"
+							placeholder="Write Your Reason"
+						></textarea>
+					</div>
+					<input type="submit" value="Submit" class="send" id="submitBtn" />
+				</form>
+			</div>
+		</section>
+	</body>
+	<script src="{%static 'js/SubmitVac.js'%}"></script>
 </html>
