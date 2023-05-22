@@ -122,5 +122,6 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 
-#Static files (CSS, JavaScript, Images) to render is located at the BASE_DIR in Folder Called External
+# Static files (CSS, JavaScript, Images) to render is located at the BASE_DIR in Folder Called External
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

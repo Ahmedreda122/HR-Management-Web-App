@@ -3,6 +3,8 @@ window.localStorage.setItem("Nate F", "12345678");
 window.localStorage.setItem("Arthur Morgan", "password"); // Manager
 window.localStorage.setItem("Dutch", "dutch7890"); // Manager
 window.localStorage.setItem("MaryBeth", "Mary1254");
+window.localStorage.setItem("John Marston", "AbigailandJack");
+console.log("HEY");
 // Get all keys from local storage
 const keys = Object.keys(localStorage);
 
@@ -67,7 +69,7 @@ document.forms[0].onsubmit = function (event) {
 		if (isManager) {
 			window.location.replace("../HR Website/M Home.html");
 		} else {
-			window.location.replace("../HR Website/H Home.html");
+			window.location.href = "/HrHome";
 		}
 	}
 };

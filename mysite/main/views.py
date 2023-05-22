@@ -16,3 +16,6 @@ def login(request):
 
 # def hey(request):
 #     template = "Emp/index.html"
+
+def HrHome(request):
+    return render(request, 'HRWebsite/H Home.html')
