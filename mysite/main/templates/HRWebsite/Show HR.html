@@ -1,36 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>List/Search HRs</title>
-  <link rel="stylesheet" href="css/public.css" />
-  <link rel="stylesheet" href="css/Navbar.css" />
-  <link rel="stylesheet" href="css/Table.css" />
+  <link rel="stylesheet" href="{% static 'css/public.css'%}" />
+  <link rel="stylesheet" href="{%static 'css/Navbar.css'%}" />
+  <link rel="stylesheet" href="{%static 'css/Table.css'%}" />
   </head>
   <body>
-    <div class="header">
-      <div class="containerNav">
-        <a href="M Home.html" title="HR-System">
-          <img class="logo" src="images/hr-logo-zip-file (1)/png/logo-no-background.png" />
-        </a>
-        <div class="links">
-          <span class="icons">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          <ul>
-            <li><a href=" M Home.html">Home</a></li>
-            <li><a href="Add HR.html">Add a HR</a></li>
-            <li><a href="Show HR.html">List/Search HRs</a></li>
-            <li><a href="Vacation Action.html">Vacations Action</a></li>
-            <li><a href="Home.html">Sign Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  {% include 'Parts/Mnavbar.html'%}
     <section class="Conatiner">
       <form method="post">
         <label class="search">Search HRs: </label>
@@ -56,7 +37,7 @@
         <tbody>
         </tbody>
       </table>
-      <script src="js/listHR.js"></script>
-      <script src="js/SearchHR.js"></script>
+      <script src="{%static 'js/listHR.js'%}"></script>
+      <script src="{%static 'js/SearchHR.js'%}"></script>
   </body>
 </html>
