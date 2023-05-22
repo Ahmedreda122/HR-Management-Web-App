@@ -6,12 +6,13 @@ from .models import Employee
 
 def index(request):
 
-    context = {
-        "Employees": Employee.objects.all()
-    }
-    return render(request, 'Emp/index.html', context)
+    # context = {
+    #     "Employees": Employee.objects.all()
+    # }
+    return render(request, 'HRWebsite/Home.html',)
 
+def login(request):
+    return render(request, 'HRWebsite/Log in.html')
 
-def hey(request):
-    template = "Emp/index.html"
-    return HttpResponse("Hello, Friends!")
+# def hey(request):
+#     template = "Emp/index.html"

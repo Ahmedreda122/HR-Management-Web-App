@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% load static %}
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{% static 'css/public.css'%}" />
+		<link rel="stylesheet" href="{% static 'css/home.css'%}" />
+		<title>Home</title>
+	</head>
+	<body>
+		<div class="container">
+			<section class="header">
+				<div>
+					<img
+						title="HR-System"
+						src="{% static 'images/hr-logo-zip-file (1)/png/logo-no-background.png' %}"
+					/>
+				</div>
+				<div>
+					<button id="Log_In"><a href="{% url 'login' %}"> Log In </a></button>
+				</div>
+			</section>
+			<section class="banner">
+				<div class="first">
+					<h1>
+						<p>Human</p>
+						<p>Resources</p>
+						<p>System</p>
+					</h1>
+				</div>
+				<div class="second">
+					<img
+						src="{% static 'images/background.png' %}"
+						width="100"
+						alt="background"
+					/>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
