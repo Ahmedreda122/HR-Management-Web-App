@@ -3,12 +3,13 @@ from django.http import HttpResponse
 from .models import Employee
 # Create your views here.
 
+def index(request):
+    context = {
+        "Employees": Employee.objects.all()
+    }
+    return render(request, 'Emp/index.html', context)
 
 def Home(request):
-
-    # context = {
-    #     "Employees": Employee.objects.all()
-    # }
     return render(request, 'HRWebsite/Home.html',)
 
 

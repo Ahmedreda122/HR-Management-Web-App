@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% load static %}
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <!-- <link rel="stylesheet" href="css/Navbar.css" /> -->
-    <link rel="stylesheet" href="{% static 'css/HR-Home.css'%}" />
-  </head>
-  <body>
-    <div class="header">
-      <div class="links">
-        <ul>
-          <li>
-            <a href="M Home.html" title="HR-System">
-              <img
-                class="logo"
-                src="{% static 'images/hr-logo-zip-file (1)/png/logo-no-background.png' %}"
-              />
-            </a>
-          </li>
-          <li><a href="Home.html">Sign Out</a></li>
-        </ul>
-      </div>
-    </div>
+	{% load static %}
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<!-- <link rel="stylesheet" href="css/Navbar.css" /> -->
+		<link rel="stylesheet" href="{% static 'css/HR-Home.css'%}" />
+	</head>
+	<body>
+		<div class="header">
+			<div class="links">
+				<ul>
+					<li>
+						<a href="{% url 'MHome'%}" title="HR-System">
+							<img
+								class="logo"
+								src="{% static 'images/hr-logo-zip-file (1)/png/logo-no-background.png' %}"
+							/>
+						</a>
+					</li>
+					<li><a href="{% url 'Home' %}">Sign Out</a></li>
+				</ul>
+			</div>
+		</div>
 
-    <section class="Conatiner">
-      <div>
-        <h1>Dashboard</h1>
-      </div>
-      <div class="Father">
-        <a href="{%url 'AddHR'%}"> Add a HR </a>
-        <a href="{%url 'ShowHRs'%}"> Show The HRs </a>
-        <a href="{%url 'VacationAction'%}"> Vacations Action </a>
-      </div>
-    </section>
-  </body>
+		<section class="Conatiner">
+			<div>
+				<h1>Dashboard</h1>
+			</div>
+			<div class="Father">
+				<a href="{%url 'AddHR'%}"> Add a HR </a>
+				<a href="{%url 'ShowHRs'%}"> Show The HRs </a>
+				<a href="{%url 'VacationAction'%}"> Vacations Action </a>
+			</div>
+		</section>
+	</body>
 </html>

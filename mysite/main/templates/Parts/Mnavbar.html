@@ -1,24 +1,27 @@
 {%load static%}
 
-  <div class="header">
-    <div class="containerNav">
-      <a href="{% url 'MHome'%}" title="HR-System">
-        <img class="logo" src="{%static 'images/hr-logo-zip-file (1)/png/logo-no-background.png'%}" />
-      </a>
-      <div class="links">
-        <span class="icons">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-        <ul>
-          <li></li>
-          <li><a href="{% url 'MHome'%}">Home</a></li>
-          <li><a href="{% url 'AddHR'%}">Add a HR</a></li>
-          <li><a href="{% url 'ShowHRs'%}">List/Search HRs</a></li>
-          <li><a href="{% url 'VacationAction'%}">Vacations Action</a></li>
-          <li><a href="{% url 'MHome'%}">Sign Out</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="header">
+	<div class="containerNav">
+		<a href="{% url 'MHome' %}" title="HR-System">
+			<img
+				class="logo"
+				src="{% static 'images/hr-logo-zip-file (1)/png/logo-no-background.png'%}"
+			/>
+		</a>
+		<div class="links">
+			<span class="icons">
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+			<ul>
+				<li></li>
+				<li><a href="{% url 'MHome' %}">Home</a></li>
+				<li><a href="{% url 'AddHR' %}">Add a HR</a></li>
+				<li><a href="{% url 'ShowHRs' %}">List/Search HRs</a></li>
+				<li><a href="{% url 'VacationAction' %}">Vacations Action</a></li>
+				<li><a href="{% url 'Home' %}">Sign Out</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
