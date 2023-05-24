@@ -86,6 +86,6 @@ editbtn.forEach((button) => {
 			.querySelector("#ID").innerHTML;
 		localStorage.setItem("currentEmployeeID", currentEmployeeID);
 		// Redirect the user to the update page
-		window.location.href = "Update-Delete Employee.html";
+		window.location.href = "UpdateDeleteEmployee";
 	});
 });
