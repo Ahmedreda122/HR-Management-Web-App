@@ -68,15 +68,17 @@ document.forms[0].onsubmit = function (event) {
 		checkDate = true;
 	}
 	if (checkDate && checkid) {
-		event.preventDefault();
-		sbmtVac();
+		// event.preventDefault();
+		// sbmtVac();
 		alert("Vacation Submitted");
 		// window.location.reload();
 	}
 	if (checkDate && checkHR) {
-		event.preventDefault();
-		sbmtVac();
+		// event.preventDefault();
+		// sbmtVac();
 		alert("Vacation Submitted");
 		// window.location.reload();
 	}
+	// Prevent form submission if there are validation errors
+	event.preventDefault();
 };

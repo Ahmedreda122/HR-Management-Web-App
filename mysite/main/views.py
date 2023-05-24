@@ -2,13 +2,28 @@ from django.shortcuts import render
 from .forms import EmployeeForm
 from django.http import HttpResponse
 from .models import Employee
+from .models import Vacation
+from .forms import VacationForm
+from django.shortcuts import redirect
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+
 # Create your views here.
+
 
 def index(request):
     context = {
         "Employees": Employee.objects.all()
     }
     return render(request, 'Emp/index.html', context)
+
+
+def index2(request):
+    context = {
+        "Vacations": Vacation.objects.all()
+    }
+    return render(request, 'Emp/index2.html', context)
+
 
 def Home(request):
     return render(request, 'HRWebsite/Home.html',)
@@ -20,12 +35,14 @@ def login(request):
 # def hey(request):
 #     template = "Emp/index.html"
 
+
 def HrHome(request):
     return render(request, 'HRWebsite/H Home.html')
 
 
 def MHome(request):
     return render(request, 'HRWebsite/M Home.html')
+
 
 def AddHR(request):
     return render(request, 'HRWebsite/Add HR.html')
@@ -38,11 +55,13 @@ def ShowHRs(request):
 def VacationAction(request):
     return render(request, 'HRWebsite/Vacation Action.html')
 
+
 def UpdateDeleteHR(request):
     return render(request, 'HRWebsite/Update-Delete HR.html')
 
 # def AddEmployee(request):
 #     return render(request, 'HRWebsite/Add Employee.html')
+
 
 def ShowEmployees(request):
     context = {
@@ -50,14 +69,34 @@ def ShowEmployees(request):
     }
     return render(request, 'HRWebsite/Show Employees.html', context)
 
+
 def SubmitVacation(request):
-    return render(request, 'HRWebsite/Submit Vacation.html')
+    if request.method == 'POST':
+        form = VacationForm(request.POST)
+        if form.is_valid():
+            vacation = Vacation(
+                EmployeeID=form.cleaned_data['EmployeeID'],
+                startDate=form.cleaned_data['startDate'],
+                endDate=form.cleaned_data['endDate'],
+                reason=form.cleaned_data['reason']
+            )
+            vacation.save()
+            return render(request, 'HRWebsite/Submit Vacation.html')
+    else:
+        form = VacationForm()
+    return render(request, 'HRWebsite/Submit Vacation.html', {'form': form})
+
+# def ShowVacations(request):
+#     vacations = Vacation.objects.all()
+#     return render(request, 'HRWebsite/Show Vactions.html', {'Vacation': vacations})
 
 def ShowVacations(request):
     return render(request, 'HRWebsite/Show Vactions.html')
 
+
 def UpdateDeleteEMP(request):
     return render(request, 'HRWebsite/Update-Delete Employee.html')
+
 
 def AddEmployee(request):
     if request.method == 'POST':
@@ -66,16 +105,16 @@ def AddEmployee(request):
             # Do something with the valid form data
             # For example, save it to the database
             employee = Employee(
-                userName = form.cleaned_data['userName'],
-                Email = form.cleaned_data['Email'],
-                phoneNum = form.cleaned_data['phoneNum'],
-                address = form.cleaned_data['address'],
-                birthDate = form.cleaned_data['birthDate'],
-                gender = form.cleaned_data['gender'],
-                jobTitle = form.cleaned_data['jobTitle'],
-                maritalStatus = form.cleaned_data['maritalStatus'],
-                salary = form.cleaned_data['salary'],
-                vacationDays = form.cleaned_data['vacationDays']
+                userName=form.cleaned_data['userName'],
+                Email=form.cleaned_data['Email'],
+                phoneNum=form.cleaned_data['phoneNum'],
+                address=form.cleaned_data['address'],
+                birthDate=form.cleaned_data['birthDate'],
+                gender=form.cleaned_data['gender'],
+                jobTitle=form.cleaned_data['jobTitle'],
+                maritalStatus=form.cleaned_data['maritalStatus'],
+                salary=form.cleaned_data['salary'],
+                vacationDays=form.cleaned_data['vacationDays']
             )
             # save the Employee data in the DB
             employee.save()
