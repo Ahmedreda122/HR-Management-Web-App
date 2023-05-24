@@ -107,7 +107,7 @@ def DeleteEMP(request, id):
 def UpdateDeleteEMP(request, id):
     obj = Employee.objects.get(ID=id)
     if request.method == 'POST':
-        form = EmployeeForm(request.POST or None, instance=obj)
+        form = EmployeeForm(request.POST, instance=obj)
         if form.is_valid():
             # Save the Employee data in the DB
             form.save()

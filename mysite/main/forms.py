@@ -7,6 +7,8 @@ from .models import Vacation
 
 
 class EmployeeForm(forms.ModelForm):
+    ID = forms.IntegerField(widget=forms.NumberInput(
+        attrs={'disabled': True}), label='ID')
     userName = forms.CharField(max_length=100)
     Email = forms.EmailField()
     address = forms.CharField(max_length=200)
@@ -23,6 +25,7 @@ class EmployeeForm(forms.ModelForm):
     class Meta:
         model = Employee
         fields = [
+            'ID',
             'userName',
             'Email',
             'phoneNum',
@@ -31,9 +34,9 @@ class EmployeeForm(forms.ModelForm):
             'jobTitle',
             'maritalStatus',
             'salary',
-            'vacationDays'
+            'vacationDays',
         ]
-# You can also Make the bellow line instead
+        # You can also Make the bellow line instead
         # fields = '__all__'
 
 
