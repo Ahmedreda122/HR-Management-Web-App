@@ -86,6 +86,6 @@ editbtn.forEach((button) => {
       .querySelector("#ID").innerHTML;
     localStorage.setItem("currentHrID", currentHrID);
     // Redirect the user to the update page
-    window.location.href = "Update-Delete HR.html";
+    window.location.href = "UpdateDeleteHR";
   });
 });

@@ -8,6 +8,7 @@ urlpatterns = [
     path('MHome/', views.MHome, name='MHome'),
     path('MHome/AddHR/', views.AddHR, name='AddHR'),
     path('MHome/ShowHRs/', views.ShowHRs, name='ShowHRs'),
+    path('ShowHRs/UpdateDeleteHR/', views.UpdateDeleteHR, name='UpdateDeleteHR'),
     path('MHome/VacationAction/', views.VacationAction, name='VacationAction'),
     path('AddEmployee/', views.AddEmployee, name='AddEmployee'),
     path('ShowEmployees/', views.ShowEmployees, name='ShowEmployees'),

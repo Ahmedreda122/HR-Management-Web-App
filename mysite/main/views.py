@@ -38,6 +38,9 @@ def ShowHRs(request):
 def VacationAction(request):
     return render(request, 'HRWebsite/Vacation Action.html')
 
+def UpdateDeleteHR(request):
+    return render(request, 'HRWebsite/Update-Delete HR.html')
+
 # def AddEmployee(request):
 #     return render(request, 'HRWebsite/Add Employee.html')
 
