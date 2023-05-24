@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>List/Search Employees</title>
-    <link rel="stylesheet" href="{% static 'css/public.css'%}" />
-    <link rel="stylesheet" href="{% static 'css/Navbar.css'%}" />
-    <link rel="stylesheet" href="{% static 'css/Table.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/public.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/Navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/Table.css' %}" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-gfdkzlimBH60Gz6XK5j41D096RDcdxvzI+Y6X9CSvZmkaZHpOWvJ+2m2kG5KMUQ2" crossorigin="anonymous">
   </head>
   <body>
@@ -37,6 +37,18 @@
           </tr>
         </thead>
         <tbody>
+          {% for emp in Employees%}
+          <tr>
+            <td id= "ID">{{ emp.ID }}</td>
+            <td>{{ emp.userName }}</td>
+            <td>{{ emp.jobTitle }}</td>
+            <td>{{ emp.vacationDays }}</td>
+            <td>
+            <div><button class = "edit">Edit</button></div>
+            <div><button class = "remove">Remove</button></div>
+            </td>
+          </tr>
+          {% endfor %}
         </tbody>
       </table>
       <script src="{% static 'js/ListEmployee.js' %}"></script>
