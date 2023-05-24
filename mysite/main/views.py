@@ -53,6 +53,9 @@ def SubmitVacation(request):
 def ShowVacations(request):
     return render(request, 'HRWebsite/Show Vactions.html')
 
+def UpdateDeleteEMP(request):
+    return render(request, 'HRWebsite/Update-Delete Employee.html')
+
 def AddEmployee(request):
     if request.method == 'POST':
         form = EmployeeForm(request.POST or None)
@@ -75,5 +78,5 @@ def AddEmployee(request):
             employee.save()
             return render(request, 'HRWebsite/H Home.html')
     else:
-        form = EmployeeForm()        
+        form = EmployeeForm()
     return render(request, 'HRWebsite/Add Employee.html', {'form': form})
