@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import EmployeeForm
+from .forms import LoginForm
 from django.http import HttpResponse
 from .models import Employee
+from .models import HR
+from django.contrib import messages
 # Create your views here.
 
 def index(request):
@@ -15,10 +18,13 @@ def Home(request):
 
 
 def login(request):
-    return render(request, 'HRWebsite/Log in.html')
-
-# def hey(request):
-#     template = "Emp/index.html"
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            return render(request, 'HRWebsite/H Home.html')
+    else:
+        form = LoginForm()
+    return render(request, 'HRWebsite/Log in.html', {'form': form})
 
 def HrHome(request):
     return render(request, 'HRWebsite/H Home.html')
@@ -56,8 +62,24 @@ def SubmitVacation(request):
 def ShowVacations(request):
     return render(request, 'HRWebsite/Show Vactions.html')
 
-def UpdateDeleteEMP(request):
-    return render(request, 'HRWebsite/Update-Delete Employee.html')
+
+def DeleteEMP(request, id):
+    obj = Employee.objects.get(ID=id)
+    obj.delete()
+    return redirect('ShowEmployees')
+
+
+def UpdateDeleteEMP(request, id):
+    obj = Employee.objects.get(ID=id)
+    if request.method == 'POST':
+        form = EmployeeForm(request.POST or None, instance=obj)
+        if form.is_valid():
+            # Save the Employee data in the DB
+            form.save()
+            return ShowEmployees(request)
+    else:
+        form = EmployeeForm(instance=obj)
+    return render(request, 'HRWebsite/Update-Delete Employee.html', {'form': form})
 
 def AddEmployee(request):
     if request.method == 'POST':

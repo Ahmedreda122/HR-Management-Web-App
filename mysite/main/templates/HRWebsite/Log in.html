@@ -23,8 +23,14 @@
 					<h2>Log In</h2>
 				</div>
 				<hr />
+				{% comment %} {% if messages %}
+				<div class="alert alert-danger" role="alert">
+					{% for message in messages %} {{ message }} {% endfor %}
+				</div>
+				{% endif %} {% endcomment %}
 				<div>
 					<form action="" method="POST">
+						{% csrf_token %} {% comment %}
 						<label class="label" for="Username">Username</label>
 						<input
 							type="text"
@@ -39,6 +45,7 @@
 							name="password"
 							placeholder="Write Your password"
 						/>
+						{% endcomment %} {{form}}
 						<input type="submit" class="send" value="Send" />
 					</form>
 				</div>
@@ -46,7 +53,9 @@
 					<a href="#">Forgot Password?</a>
 				</div>
 			</section>
+			{% comment %}
 			<script src="{% static 'js/login.js' %}"></script>
+			{% endcomment %}
 		</div>
 	</body>
 </html>

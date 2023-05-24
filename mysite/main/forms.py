@@ -2,6 +2,7 @@
 from django import forms
 from django.forms.widgets import DateInput
 from .models import Employee
+from .models import HR
 
 class EmployeeForm(forms.ModelForm):
     userName = forms.CharField(max_length=100)
@@ -28,3 +29,31 @@ class EmployeeForm(forms.ModelForm):
         'salary',
         'vacationDays'
       ]
+
+class LoginForm(forms.ModelForm):
+  userName = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': "Write Your Username"}))
+  password = forms.CharField(max_length=100, widget=forms.PasswordInput(attrs={'placeholder': "Write Your Password"}))
+  class Meta:
+    model = HR
+    fields = [
+      'userName',
+      'password'
+    ]
+    
+  def clean_userName(self, *args, **kwarg):
+    Hrs = HR.objects.all()
+    userName = self.cleaned_data.get('userName')
+    # passW = self.cleaned_data.get('password') 
+    for hr in Hrs:
+        if (hr.userName == userName):
+            return userName
+    raise forms.ValidationError('The Username is Wrong.')
+  
+  def clean_password(self, *args, **kwarg):
+    Hrs = HR.objects.all()
+    passW = self.cleaned_data.get('password') 
+    for hr in Hrs:
+        if (hr.password == passW):
+            return passW
+    raise forms.ValidationError('The Password is Wrong.')
+
