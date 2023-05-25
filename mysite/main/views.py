@@ -146,21 +146,12 @@ def AddEmployee(request):
     return render(request, "HRWebsite/Add Employee.html", {"form": form})
 
 
-def UpdateVacationStatus(request, vacationID):
-    if request.method == "POST":
-        form = VacationStatusForm(request.POST)
-        if form.is_valid():
-            status = form.cleaned_data["status"]
-            vacation = Vacation.objects.get(ID=vacationID)
-            # Update the status based on the submitted value
-            if status == "Approved":
-                vacation.status = "Approved"
-            elif status == "Rejected":
-                vacation.status = "Rejected"
-            vacation.save()
-
-            return redirect("VacationAction")
-    else:
-        form = VacationStatusForm()
-
-    return render(request, "update_status.html", {"form": form})
+def UpdateVacationStatus(request, vacationID, status):
+    vacation = Vacation.objects.get(ID=vacationID)
+    # Update the status based on the submitted value
+    if status == "Approved":
+        vacation.status = "Approved"
+    elif status == "Rejected":
+        vacation.status = "Rejected"
+    vacation.save()
+    return redirect("VacationAction")

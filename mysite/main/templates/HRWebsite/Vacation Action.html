@@ -37,6 +37,7 @@
                 {% endif %}
               {% endfor %}
             </td>
+            <script> localStorage.setItem("VacationID", {{vac.ID}})</script>
             {% comment %}
             {% for hr in HRs %}
               {% if hr.ID == vac.employeeID %}
@@ -47,18 +48,37 @@
             <td>{{ vac.startDate }}</td>
             <td>{{ vac.endDate }}</td>
             <td>{{ vac.reason }}</td>
+            {% if vac.status == "Approved" %}
+              <td>
+                <span class="dot" style="border-color: rgb(15, 255, 15);"></span><span class="status">{{ vac.status }}</span>
+              </td>
+              <td>
+                <div>
+                  Action Taken
+                </div>
+              </td>
+            {% elif vac.status == "Rejected" %}
+              <td>
+                <span class="dot" style="border-color: red;"></span><span class="status">{{ vac.status }}</span>
+              </td>
+              <td>
+                <div>
+                  Action Taken
+                </div>
+              </td>
+            {% else %}
             <td>
-              <span class="dot"></span><span class="status">{{ vac.status }}</span>
+                <span class="dot"></span><span class="status">{{ vac.status }}</span>
             </td>
             <td>
               <div>
-                <form method="POST" action="{% url 'UpdateStatus' vac.ID %}">
-                  {% csrf_token %}
-                  <button class="approve" type="submit" name="status" value="Approved">Approve</button>
-                  <button class="reject" type="submit" name="status" value="Rejected">Reject</button>
-                </form>
+                {% comment %} onclick="window.location.href='/UpdateStatus/' + {{vac.ID}} + '/Approved'; {% endcomment %}
+                {% comment %} onclick="window.location.href='/UpdateStatus/' + {{vac.ID}} + '/Approved';" {% endcomment %}
+                  <button class="approve" value="Approved" >Approve</button>
+                  <button class="reject" value="Rejected" >Reject</button>
               </div>
             </td>
+            {% endif %}
           </tr>
           {% endfor %}
         </tbody>

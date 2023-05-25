@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Employee(models.Model):
-    ID = models.BigAutoField(primary_key=True, verbose_name='ID')
+    ID = models.BigAutoField(primary_key=True, verbose_name="ID")
     userName = models.CharField(max_length=100)
     Email = models.CharField(max_length=255)
     phoneNum = models.IntegerField()
@@ -26,18 +26,23 @@ class HR(models.Model):
     userName = models.CharField(max_length=100, default="none")
     password = models.CharField(max_length=100, default="none")
 
+
 class Manager(models.Model):
     userName = models.CharField(max_length=100, default="Manager")
     password = models.CharField(max_length=100, default="admin")
 
+
 class Vacation(models.Model):
-    ID = models.BigAutoField(primary_key=True)
-    EmployeeID = models.IntegerField(models.ForeignKey(
-        Employee, verbose_name=("Employee ID"), on_delete=models.CASCADE))
+    ID = models.BigAutoField(primary_key=True, verbose_name="ID")
+    EmployeeID = models.IntegerField(
+        models.ForeignKey(
+            Employee, verbose_name=("Employee ID"), on_delete=models.CASCADE
+        )
+    )
     startDate = models.DateField()
     endDate = models.DateField()
     reason = models.TextField()
-    status = models.TextField(max_length=20, default='Pending')
+    status = models.TextField(max_length=20, default="Pending")
 
     def __str__(self):
         return f"Vacation ID: {self.ID}, Employee ID: {self.EmployeeID}, Start Date: {self.startDate}, End Date: {self.endDate}, Reason: {self.reason}, Status: {self.status}"

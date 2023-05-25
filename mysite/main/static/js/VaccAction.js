@@ -44,45 +44,61 @@ const rejctbttn = document.querySelectorAll(".reject");
 aprvbttn.forEach((button) => {
 	button.addEventListener("click", (event) => {
 		isPending = false;
-		const EmployeeVacationID = event.target
+		const EmployeeID = event.target
 			.closest("tr")
 			.querySelector("#ID").innerHTML;
 
-		console.log("HEY");
+		// console.log("HEY");
 
-		localStorage.setItem("EmployeeVacationID", EmployeeVacationID);
+		// localStorage.setItem("EmployeeID", EmployeeID);
 		// for (var i = 0; i < vacations.length; i++) {
-		// 	if (EmployeeVacationID === vacations[i].employeeID) {
+		// 	if (EmployeeID === vacations[i].employeeID) {
 		// 		vacations[i].status = "Approved";
 		// 	}
 		// }
-		localStorage.setItem("vacations", JSON.stringify(vacations));
-		button.closest("tr").getElementsByClassName("status")[0].innerHTML =
-			"Approved";
-		button.closest("tr").getElementsByClassName("dot")[0].style.borderColor =
-			"#0fff0f";
-		button.closest("div").innerHTML = "Action Taken";
+
+		if (
+			confirm(
+				"You are gonna to Approve this Vacation for Employee #" + EmployeeID
+			)
+		) {
+			// button.closest("tr").getElementsByClassName("status")[0].innerHTML =
+			// 	"Approved";
+			// button.closest("tr").getElementsByClassName("dot")[0].style.borderColor =
+			// 	"#0fff0f";
+			// button.closest("div").innerHTML = "Action Taken";
+
+			var vacID = localStorage.getItem("VacationID");
+			window.location.href = "/UpdateStatus/" + vacID + "/Approved";
+		}
 	});
 });
 
 rejctbttn.forEach((button) => {
 	button.addEventListener("click", (event) => {
 		isPending = false;
-		const EmployeeVacationID = event.target
+		const EmployeeID = event.target
 			.closest("tr")
 			.querySelector("#ID").innerHTML;
-		localStorage.setItem("EmployeeVacationID", EmployeeVacationID);
 		// for (var i = 0; i < vacations.length; i++) {
-		// 	if (EmployeeVacationID === vacations[i].employeeID) {
+		// 	if (EmployeeID === vacations[i].employeeID) {
 		// 		vacations[i].status = "Rejected";
 		// 	}
 		// }
-		localStorage.setItem("vacations", JSON.stringify(vacations));
-		button.closest("tr").getElementsByClassName("status")[0].innerHTML =
-			"Rejected";
-		button.closest("tr").getElementsByClassName("dot")[0].style.borderColor =
-			"red";
-		button.closest("div").innerHTML = "Action Taken";
+		if (
+			confirm(
+				"You are gonna to Reject this Vacation for Employee #" + EmployeeID
+			)
+		) {
+			// button.closest("tr").getElementsByClassName("status")[0].innerHTML =
+			// 	"Rejected";
+			// button.closest("tr").getElementsByClassName("dot")[0].style.borderColor =
+			// 	"red";
+			// button.closest("div").innerHTML = "Action Taken";
+
+			var vacID = localStorage.getItem("VacationID");
+			window.location.href = "/UpdateStatus/" + vacID + "/Rejected";
+		}
 	});
 });
 
