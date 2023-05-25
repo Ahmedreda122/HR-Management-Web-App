@@ -163,7 +163,7 @@ def UpdateVacationStatus(request, vacationID):
                 vacation.status = 'Rejected'
             vacation.save()
 
-            return redirect('VacationAction') 
+            return redirect('VacationAction')
     else:
         form = VacationStatusForm()
 
