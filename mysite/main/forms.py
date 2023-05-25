@@ -7,37 +7,71 @@ from .models import Vacation
 
 
 class EmployeeForm(forms.ModelForm):
-    ID = forms.IntegerField(widget=forms.NumberInput(
-        attrs={'disabled': True}), label='ID')
+    ID = forms.IntegerField(
+        widget=forms.NumberInput(attrs={'disabled': True}),
+        label='ID',
+        initial=Employee.objects.latest('ID').ID + 1
+    )
     userName = forms.CharField(max_length=100)
-    Email = forms.EmailField()
-    address = forms.CharField(max_length=200)
-    phoneNum = forms.CharField(max_length=20)
+    Email = forms.CharField(max_length=255)
+    phoneNum = forms.IntegerField()
+    address = forms.CharField(max_length=255)
+    birthDate = forms.DateField(widget=DateInput(attrs={'type': 'date'}))
     gender = forms.ChoiceField(
         choices=[('male', 'Male'), ('female', 'Female')])
-    maritalStatus = forms.ChoiceField(
-        choices=[('Single', 'Single'), ('Married', 'Married'), ('Divorced', 'Divorced')])
-    birthDate = forms.DateField(widget=DateInput(attrs={'type': 'date'}))
-    jobTitle = forms.CharField(max_length=100)
+    jobTitle = forms.CharField(max_length=64)
+    maritalStatus = forms.CharField(max_length=64)
     salary = forms.IntegerField()
     vacationDays = forms.IntegerField()
 
     class Meta:
         model = Employee
-        fields = [
-            'ID',
+        # fields = [
+        #     'ID',
+        #     'userName',
+        #     'Email',
+        #     'phoneNum',
+        #     'address',
+        #     'birthDate',
+        #     'gender',
+        #     'jobTitle',
+        #     'maritalStatus',
+        #     'salary',
+        #     'vacationDays',
+        # ]
+
+        fields = '__all__'
+ # The constructor
+    def __init__(self, *args, **kwargs):
+        # Call the parent class __init__ method
+        super().__init__(*args, **kwargs)
+        self.order_fields([
+            'ID',  # Display the 'ID' field First
             'userName',
             'Email',
             'phoneNum',
             'address',
             'birthDate',
+            'gender',
             'jobTitle',
             'maritalStatus',
             'salary',
             'vacationDays',
-        ]
-        # You can also Make the bellow line instead
-        # fields = '__all__'
+        ])
+# # Reorder the form fields
+# order_fields([
+#     'ID',
+#     'userName',
+#     'Email',
+#     'phoneNum',
+#     'address',
+#     'birthDate',
+#     'gender',
+#     'jobTitle',
+#     'maritalStatus',
+#     'salary',
+#     'vacationDays',
+# ])
 
 
 class VacationForm(forms.ModelForm):

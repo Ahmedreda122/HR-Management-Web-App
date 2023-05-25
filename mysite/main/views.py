@@ -90,13 +90,12 @@ def SubmitVacation(request):
         form = VacationForm()
     return render(request, 'HRWebsite/Submit Vacation.html', {'form': form})
 
-# def ShowVacations(request):
-#     vacations = Vacation.objects.all()
-#     return render(request, 'HRWebsite/Show Vactions.html', {'Vacation': vacations})
-
 def ShowVacations(request):
-    return render(request, 'HRWebsite/Show Vactions.html')
-
+    context = {
+        "Vacations": Vacation.objects.all(),
+        "Employees": Employee.objects.all()
+    }
+    return render(request, 'HRWebsite/Show Vactions.html', context)
 
 def DeleteEMP(request, id):
     obj = Employee.objects.get(ID=id)
@@ -141,3 +140,4 @@ def AddEmployee(request):
     else:
         form = EmployeeForm()
     return render(request, 'HRWebsite/Add Employee.html', {'form': form})
+

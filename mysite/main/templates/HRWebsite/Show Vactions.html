@@ -26,6 +26,23 @@
           </tr>
         </thead>
         <tbody>
+          {% for vac in Vacations %}
+          <tr>
+              <td id="ID">{{ vac.EmployeeID }}</td>
+              <td>
+          {% for emp in Employees %}
+            {% if emp.ID == vac.EmployeeID %}
+              {{ emp.userName }}
+            {% endif %}
+          {% endfor %}</td>
+              <td>{{ vac.startDate }}</td>
+              <td>{{ vac.endDate }}</td>
+              <td>{{ vac.reason }}</td>
+              <td>
+              <span class="dot"></span><span class="status">{{ vac.status }}</span>
+              </td>
+          </tr>
+  {% endfor %}
         </tbody>
       </table>
   </body>
