@@ -26,6 +26,9 @@ class HR(models.Model):
     userName = models.CharField(max_length=100, default="none")
     password = models.CharField(max_length=100, default="none")
 
+class Manager(models.Model):
+    userName = models.CharField(max_length=100, default="Manager")
+    password = models.CharField(max_length=100, default="admin")
 
 class Vacation(models.Model):
     ID = models.BigAutoField(primary_key=True)
@@ -38,4 +41,3 @@ class Vacation(models.Model):
 
     def __str__(self):
         return f"Vacation ID: {self.ID}, Employee ID: {self.EmployeeID}, Start Date: {self.startDate}, End Date: {self.endDate}, Reason: {self.reason}, Status: {self.status}"
-

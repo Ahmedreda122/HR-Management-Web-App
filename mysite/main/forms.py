@@ -1,8 +1,7 @@
 
 from django import forms
 from django.forms.widgets import DateInput
-from .models import Employee
-from .models import HR
+from .models import Employee, HR, Manager
 from .models import Vacation
 
 
@@ -101,35 +100,39 @@ class VacationForm(forms.ModelForm):
         fields = ['EmployeeID', 'startDate', 'endDate', 'reason']
 
 
-class LoginForm(forms.ModelForm):
+class LoginForm(forms.Form):
+    type = forms.ChoiceField(label='', choices=[(
+        'HR Specialist', 'HR Specialist'), ('Manager', 'Manager')], initial='HR Specialist',  widget=forms.Select(attrs={'class': 'SelectField'}))
     userName = forms.CharField(max_length=100, widget=forms.TextInput(
         attrs={'placeholder': "Write Your Username"}))
     password = forms.CharField(max_length=100, widget=forms.PasswordInput(
         attrs={'placeholder': "Write Your Password"}))
-
-    class Meta:
-        model = HR
-        fields = [
-            'userName',
-            'password'
-        ]
-
+        
     def clean_userName(self, *args, **kwarg):
-        Hrs = HR.objects.all()
+        if (self.cleaned_data.get('type') == "Manager"):
+            users = Manager.objects.all()
+        elif (self.cleaned_data.get('type') == "HR Specialist"): 
+            users = HR.objects.all()
+            
         userName = self.cleaned_data.get('userName')
         # passW = self.cleaned_data.get('password')
-        for hr in Hrs:
-            if (hr.userName == userName):
+        for user in users:
+            if (user.userName == userName):
                 return userName
         raise forms.ValidationError('The Username is Wrong.')
 
     def clean_password(self, *args, **kwarg):
-        Hrs = HR.objects.all()
-        passW = self.cleaned_data.get('password')
-        for hr in Hrs:
-            if (hr.password == passW):
-                return passW
-        raise forms.ValidationError('The Password is Wrong.')
+      if (self.cleaned_data.get('type') == "Manager"):
+        users = Manager.objects.all()
+      elif (self.cleaned_data.get('type') == "HR Specialist"): 
+        users = HR.objects.all()
+        
+      passW = self.cleaned_data.get('password')
+      
+      for user in users:
+          if (user.password == passW):
+              return passW
+      raise forms.ValidationError('The Password is Wrong.')
 
 
 class VacationStatusForm(forms.Form):

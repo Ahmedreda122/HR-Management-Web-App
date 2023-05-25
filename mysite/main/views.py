@@ -36,9 +36,10 @@ def Home(request):
 def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
-        if form.is_valid():
-            isLoggedIn = True
+        if form.is_valid() and form.cleaned_data['type'] == 'HR Specialist':
             return render(request, 'HRWebsite/H Home.html')
+        elif form.is_valid() and form.cleaned_data['type'] == 'Manager':
+            return render(request, 'HRWebsite/M Home.html')
     else:
         form = LoginForm()
     return render(request, 'HRWebsite/Log in.html', {'form': form})
