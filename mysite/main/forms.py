@@ -130,3 +130,9 @@ class LoginForm(forms.ModelForm):
             if (hr.password == passW):
                 return passW
         raise forms.ValidationError('The Password is Wrong.')
+
+class VacationStatusForm(forms.Form):
+    status = forms.ChoiceField(
+        choices=[('Approved', 'Approve'), ('Rejected', 'Reject')],
+        widget=forms.RadioSelect
+    )

@@ -42,17 +42,17 @@ const rejctbttn = document.querySelectorAll(".reject");
 
 aprvbttn.forEach((button) => {
   button.addEventListener("click", (event) => {
-    isPending = false;
-    const EmployeeVacationID = event.target
-      .closest("tr")
-      .querySelector("#ID").innerHTML;
-    localStorage.setItem("EmployeeVacationID", EmployeeVacationID);
-    for (var i = 0; i < vacations.length; i++) {
-      if (EmployeeVacationID === vacations[i].employeeID) {
-        vacations[i].status = "Approved";
-      }
-    }
-    localStorage.setItem("vacations", JSON.stringify(vacations));
+    // isPending = false;
+    // const EmployeeVacationID = event.target
+    //   .closest("tr")
+    //   .querySelector("#ID").innerHTML;
+    // localStorage.setItem("EmployeeVacationID", EmployeeVacationID);
+    // for (var i = 0; i < vacations.length; i++) {
+    //   if (EmployeeVacationID === vacations[i].employeeID) {
+    //     vacations[i].status = "Approved";
+    //   }
+    // }
+    // localStorage.setItem("vacations", JSON.stringify(vacations));
     button.closest("tr").getElementsByClassName("status")[0].innerHTML =
       "Approved";
     button.closest("tr").getElementsByClassName("dot")[0].style.borderColor =

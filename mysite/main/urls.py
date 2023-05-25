@@ -11,6 +11,7 @@ urlpatterns = [
     path('MHome/ShowHRs/', views.ShowHRs, name='ShowHRs'),
     path('UpdateDeleteHR/', views.UpdateDeleteHR, name='UpdateDeleteHR'),
     path('MHome/VacationAction/', views.VacationAction, name='VacationAction'),
+    path('UpdateStatus/<int:vacationID>/', views.UpdateVacationStatus, name='UpdateStatus'),
     path('AddEmployee/', views.AddEmployee, name='AddEmployee'),
     path('ShowEmployees/', views.ShowEmployees, name='ShowEmployees'),
     path('UpdateDeleteEMP/<int:id>/', views.UpdateDeleteEMP, name='UpdateDeleteEMP'),

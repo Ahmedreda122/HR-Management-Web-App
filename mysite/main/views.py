@@ -7,6 +7,7 @@ from .models import HR
 from django.contrib import messages
 from .models import Vacation
 from .forms import VacationForm
+from .forms import VacationStatusForm
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
@@ -18,7 +19,6 @@ def index(request):
         "Employees": Employee.objects.all()
     }
     return render(request, 'Emp/index.html', context)
-
 
 
 def index2(request):
@@ -41,6 +41,7 @@ def login(request):
         form = LoginForm()
     return render(request, 'HRWebsite/Log in.html', {'form': form})
 
+
 def HrHome(request):
     return render(request, 'HRWebsite/H Home.html')
 
@@ -58,7 +59,12 @@ def ShowHRs(request):
 
 
 def VacationAction(request):
-    return render(request, 'HRWebsite/Vacation Action.html')
+    context = {
+        "Vacations": Vacation.objects.all(),
+        "Employees": Employee.objects.all()
+    }
+    return render(request, 'HRWebsite/Vacation Action.html', context)
+
 
 def UpdateDeleteHR(request):
     return render(request, 'HRWebsite/Update-Delete HR.html')
@@ -90,12 +96,14 @@ def SubmitVacation(request):
         form = VacationForm()
     return render(request, 'HRWebsite/Submit Vacation.html', {'form': form})
 
+
 def ShowVacations(request):
     context = {
         "Vacations": Vacation.objects.all(),
         "Employees": Employee.objects.all()
     }
     return render(request, 'HRWebsite/Show Vactions.html', context)
+
 
 def DeleteEMP(request, id):
     obj = Employee.objects.get(ID=id)
@@ -141,3 +149,22 @@ def AddEmployee(request):
         form = EmployeeForm()
     return render(request, 'HRWebsite/Add Employee.html', {'form': form})
 
+
+def UpdateVacationStatus(request, vacationID):
+    if request.method == 'POST':
+        form = VacationStatusForm(request.POST)
+        if form.is_valid():
+            status = form.cleaned_data['status']
+            vacation = Vacation.objects.get(ID=vacationID)
+            # Update the status based on the submitted value
+            if status == 'Approved':
+                vacation.status = 'Approved'
+            elif status == 'Rejected':
+                vacation.status = 'Rejected'
+            vacation.save()
+
+            return redirect('VacationAction') 
+    else:
+        form = VacationStatusForm()
+
+    return render(request, 'update_status.html', {'form': form})

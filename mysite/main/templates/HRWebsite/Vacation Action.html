@@ -27,7 +27,42 @@
           </tr>
         </thead>
         <tbody>
+          {% for vac in Vacations %}
+          <tr>
+            <td id="ID">{{ vac.EmployeeID }}</td>
+            <td>
+              {% for emp in Employees %}
+                {% if emp.ID == vac.EmployeeID %}
+                  {{ emp.userName }}
+                {% endif %}
+              {% endfor %}
+              {% comment %}
+              {% for hr in HRs %}
+                {% if hr.ID == vac.employeeID %}
+                  {{ hr.username }}
+                {% endif %}
+              {% endfor %}
+              {% endcomment %}
+            </td>
+            <td>{{ vac.startDate }}</td>
+            <td>{{ vac.endDate }}</td>
+            <td>{{ vac.reason }}</td>
+            <td>
+              <span class="dot"></span><span class="status">{{ vac.status }}</span>
+            </td>
+            <td>
+              <div>
+                <form method="POST" action="{% url 'UpdateStatus' vac.ID %}">
+                  {% csrf_token %}
+                  <button class="approve" type="submit" name="status" value="Approved">Approve</button>
+                  <button class="reject" type="submit" name="status" value="Rejected">Reject</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
         </tbody>
+
       </table>
       <script src="{%static 'js/VaccAction.js'%}"></script>
   </body>
