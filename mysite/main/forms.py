@@ -39,7 +39,7 @@ class EmployeeForm(forms.ModelForm):
         # ]
 
         fields = '__all__'
- # The constructor
+# The constructor
 
     def __init__(self, *args, **kwargs):
         # Call the parent class __init__ method
@@ -130,6 +130,7 @@ class LoginForm(forms.ModelForm):
             if (hr.password == passW):
                 return passW
         raise forms.ValidationError('The Password is Wrong.')
+
 
 class VacationStatusForm(forms.Form):
     status = forms.ChoiceField(

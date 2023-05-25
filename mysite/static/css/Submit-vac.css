@@ -13,14 +13,14 @@ section {
 }
 
 .Father form {
-    padding: 20px 20px 0px 25px;
-    box-shadow: 3px 3px 3px var(--shadow-color);
-    border-radius: var(--raduis-size);
-    width: 385px;
-    margin: auto;
-    text-align: center;
-    background-color: rgb(252, 253, 253);
-    border: 3px solid rgba(232, 229, 229, 0.602);
+	padding: 20px 20px 0px 25px;
+	box-shadow: 3px 3px 3px var(--shadow-color);
+	border-radius: var(--raduis-size);
+	width: 385px;
+	margin: auto;
+	text-align: center;
+	background-color: rgb(252, 253, 253);
+	border: 3px solid rgba(232, 229, 229, 0.602);
 }
 
 .cap h1 {

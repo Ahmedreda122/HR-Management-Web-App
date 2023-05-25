@@ -11,9 +11,10 @@ from .forms import VacationStatusForm
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+
+
 # Create your views here.
-
-
 def index(request):
     context = {
         "Employees": Employee.objects.all()
@@ -36,14 +37,15 @@ def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
+            isLoggedIn = True
             return render(request, 'HRWebsite/H Home.html')
     else:
         form = LoginForm()
     return render(request, 'HRWebsite/Log in.html', {'form': form})
 
 
-def HrHome(request):
-    return render(request, 'HRWebsite/H Home.html')
+def HrHome(request): 
+        return render(request, 'HRWebsite/H Home.html')
 
 
 def MHome(request):
@@ -123,7 +125,7 @@ def UpdateDeleteEMP(request, id):
         form = EmployeeForm(instance=obj)
     return render(request, 'HRWebsite/Update-Delete Employee.html', {'form': form})
 
-
+@login_required(login_url='/login/') # Login Required Based on Session Storage
 def AddEmployee(request):
     if request.method == 'POST':
         form = EmployeeForm(request.POST or None)
