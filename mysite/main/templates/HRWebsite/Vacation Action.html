@@ -36,14 +36,14 @@
                   {{ emp.userName }}
                 {% endif %}
               {% endfor %}
-              {% comment %}
-              {% for hr in HRs %}
-                {% if hr.ID == vac.employeeID %}
-                  {{ hr.username }}
-                {% endif %}
-              {% endfor %}
-              {% endcomment %}
             </td>
+            {% comment %}
+            {% for hr in HRs %}
+              {% if hr.ID == vac.employeeID %}
+                {{ hr.username }}
+              {% endif %}
+            {% endfor %}
+            {% endcomment %}
             <td>{{ vac.startDate }}</td>
             <td>{{ vac.endDate }}</td>
             <td>{{ vac.reason }}</td>
@@ -62,8 +62,7 @@
           </tr>
           {% endfor %}
         </tbody>
-
       </table>
-      <script src="{%static 'js/VaccAction.js'%}"></script>
+      <script src="{% static 'js/VaccAction.js' %}"></script>
   </body>
 </html>
