@@ -13,7 +13,7 @@
 	<body>
 		{% include 'Navbar/HRNavBar.html' %}
 		<div class="Conatiner">
-			<form action="" method="POST" class="Add">
+			<form action="{% url 'AddEmployee' %}" method="POST" class="Add">
 				{% csrf_token %}
 				<div class="humRe">
 					<p>Add an Employee</p>
