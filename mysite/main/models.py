@@ -23,9 +23,16 @@ class Employee(models.Model):
 
 
 class HR(models.Model):
-    userName = models.CharField(max_length=100, default="none")
-    password = models.CharField(max_length=100, default="none")
-
+    ID = models.BigAutoField(primary_key=True, verbose_name="ID")
+    userName = models.CharField(max_length=100)
+    Email = models.CharField(max_length=255)
+    password = models.CharField(max_length=100)
+    phoneNum = models.IntegerField()
+    address = models.CharField(max_length=255)
+    birthDate = models.DateField()
+    gender = models.CharField(max_length=10)
+    maritalStatus = models.CharField(max_length=64)
+    vacationDays = models.IntegerField()
 
 class Manager(models.Model):
     userName = models.CharField(max_length=100, default="Manager")
@@ -36,7 +43,7 @@ class Vacation(models.Model):
     ID = models.BigAutoField(primary_key=True, verbose_name="ID")
     EmployeeID = models.IntegerField(
         models.ForeignKey(
-            Employee, verbose_name=("Employee ID"), on_delete=models.CASCADE
+            Employee, verbose_name=("Employee ID"), on_delete=models.CASCADE, related_name="Employee ID"
         )
     )
     startDate = models.DateField()
