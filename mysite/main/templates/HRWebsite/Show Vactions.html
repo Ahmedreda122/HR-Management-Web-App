@@ -26,8 +26,8 @@
           </tr>
         </thead>
         <tbody>
-          {% for vac in Vacations %}
-          <tr>
+            {% for vac in Vacations %}
+            <tr>
               <td id="ID">{{ vac.EmployeeID }}</td>
               <td>
           {% for emp in Employees %}
@@ -38,9 +38,19 @@
               <td>{{ vac.startDate }}</td>
               <td>{{ vac.endDate }}</td>
               <td>{{ vac.reason }}</td>
+              {% if vac.status == "Approved" %}
               <td>
-              <span class="dot"></span><span class="status">{{ vac.status }}</span>
+                <span class="dot" style="border-color: rgb(15, 255, 15);"></span><span class="status">{{ vac.status }}</span>
               </td>
+            {% elif vac.status == "Rejected" %}
+              <td>
+                <span class="dot" style="border-color: red;"></span><span class="status">{{ vac.status }}</span>
+              </td>
+            {% else %}
+            <td>
+                <span class="dot"></span><span class="status">{{ vac.status }}</span>
+            </td>
+            {% endif %}
           </tr>
   {% endfor %}
         </tbody>
