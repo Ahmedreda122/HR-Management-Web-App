@@ -89,7 +89,7 @@ def SubmitVacation(request):
                 reason=form.cleaned_data["reason"],
             )
             vacation.save()
-            return render(request, "HRWebsite/Submit Vacation.html")
+            return redirect("ShowVacations")
     else:
         form = VacationForm()
     return render(request, "HRWebsite/Submit Vacation.html", {"form": form})
@@ -106,6 +106,7 @@ def DeleteEMP(request, id):
     return redirect("ShowEmployees")
 
 
+# @login_required(login_url="/login/")  # Login Required Based on Session Storage
 def UpdateDeleteEMP(request, id):
     obj = Employee.objects.get(ID=id)
     if request.method == "POST":
@@ -119,7 +120,7 @@ def UpdateDeleteEMP(request, id):
     return render(request, "HRWebsite/Update-Delete Employee.html", {"form": form})
 
 
-@login_required(login_url="/login/")  # Login Required Based on Session Storage
+# @login_required(login_url="/login/")  # Login Required Based on Session Storage
 def AddEmployee(request):
     if request.method == "POST":
         form = EmployeeForm(request.POST or None)
