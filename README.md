@@ -13,7 +13,7 @@ This is a HR Management Web Application developed using Django and SQLite. It pr
 
 ## How to Run
 
-1. Clone the repository: `git clone `
+1. Clone the repository: `git clone https://github.com/Ahmedreda122/HR-Management-Web-App.git`
 2. Navigate to the project directory: `cd HR-Management-WebApp/mysite`
 3. Run the Django app: `python manage.py runserver`
 4. Access the app in your web browser at `http://localhost:8000`
