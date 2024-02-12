@@ -38,13 +38,6 @@
               {% endfor %}
             </td>
             <script> localStorage.setItem("VacationID", {{vac.ID}})</script>
-            {% comment %}
-            {% for hr in HRs %}
-              {% if hr.ID == vac.employeeID %}
-                {{ hr.username }}
-              {% endif %}
-            {% endfor %}
-            {% endcomment %}
             <td>{{ vac.startDate }}</td>
             <td>{{ vac.endDate }}</td>
             <td>{{ vac.reason }}</td>
@@ -72,10 +65,8 @@
             </td>
             <td>
               <div>
-                {% comment %} onclick="window.location.href='/UpdateStatus/' + {{vac.ID}} + '/Approved'; {% endcomment %}
-                {% comment %} onclick="window.location.href='/UpdateStatus/' + {{vac.ID}} + '/Approved';" {% endcomment %}
-                  <button class="approve" value="Approved" >Approve</button>
-                  <button class="reject" value="Rejected" >Reject</button>
+                  <button class="approve" value="Approved" onclick="window.location.href='/UpdateStatus/' + {{vac.ID}} + '/Approved';">Approve</button>
+                  <button class="reject" value="Rejected" onclick="window.location.href='/UpdateStatus/' + {{vac.ID}} + '/Rejected';">Reject</button>
               </div>
             </td>
             {% endif %}

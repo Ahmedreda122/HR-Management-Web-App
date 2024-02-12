@@ -7,6 +7,6 @@ admin.site.register(Employee)
 admin.site.register(HR)
 admin.site.register(Manager)
 admin.site.register(Vacation)
-#Username: Hope
-#Email address: ahmadredaby122@gmail.com
-#Password: Hey123456
+# Username: test
+# Email address: ahmadreda@gmail.com
+# Password: test

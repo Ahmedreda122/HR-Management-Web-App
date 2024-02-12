@@ -11,12 +11,14 @@
 	/* margin: auto; */
 	margin: 15px auto;
 }
+
 .Conatiner .Add {
 	height: 100%;
 	width: 40%;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .Add div {
 	display: block;
 	/* justify-content: space-between; */
